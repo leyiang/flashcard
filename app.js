@@ -13,7 +13,6 @@ let cards = data.dev
 
 let round = 0;
 let pointer = 0;
-let time = 0;
 let answer = false;
 
 // Confetti Animation
@@ -21,10 +20,6 @@ const confetti = new JSConfetti();
 
 // Set Total Card Number
 totalNumber.textContent = cards.length.toString();
-
-setInterval(() => {
-    time += 1;
-}, 1000 );
 
 function update() {
     const card = cards[pointer];
@@ -87,7 +82,6 @@ function next() {
      pointer ++;
      if( pointer >= cards.length ) restart();
      update();
-     console.log( time, time / pointer );
 }
 
 function go() {
