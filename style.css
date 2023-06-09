@@ -62,6 +62,10 @@ header {
     color: #0000005e;
 }
 
+.info-wrap {
+    margin: 0;
+}
+
 .info {
     font-size: 40px;
 }
