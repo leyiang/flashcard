@@ -80,4 +80,11 @@ footer {
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
+    color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: color .3s;
+}
+
+footer:hover {
+    color: rgba(0, 0, 0, 0.4);
 }
