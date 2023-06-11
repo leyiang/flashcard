@@ -28,8 +28,27 @@ function update() {
 
     currentNumber.textContent = (pointer + 1).toString();
     // Render LaTeX
-    dCard.innerHTML = "";
+    render( content );
+}
 
+function render( content ) {
+    dCard.innerHTML = "";
+    if( content.startsWith("image:") ) {
+        // Render Image
+        renderImage( content.slice(6) );
+    } else {
+        renderLatex( content );
+    }
+}
+
+function renderImage( fname ) {
+    const image = document.createElement("img");
+    image.src = "./images/" + fname;
+
+    dCard.appendChild( image );
+}
+
+function renderLatex( content ) {
     MathJax.texReset();
     var options = MathJax.getMetricsFor(dCard);
     MathJax.tex2svgPromise(content, options).then(function (node) {
