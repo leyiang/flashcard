@@ -36,6 +36,8 @@ function render( content ) {
     if( content.startsWith("image:") ) {
         // Render Image
         renderImage( content.slice(6) );
+    } else if ( content.startsWith("text:") ) {
+        renderText( content.slice(5) );
     } else {
         renderLatex( content );
     }
@@ -46,6 +48,11 @@ function renderImage( fname ) {
     image.src = "./images/" + fname;
 
     dCard.appendChild( image );
+}
+
+
+function renderText( text ) {
+    dCard.innerText = text;
 }
 
 function renderLatex( content ) {
