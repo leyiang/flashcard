@@ -1,5 +1,133 @@
 const all_cards = {
+    "new": [
+        ["数学规纳法", "\\displaylines{1.证明首项成立 \\\\ 2.假设n成立，证明n+1成立}"],
+        ["\\sec图像", "image:sec_graph.svg"],
+        ["\\csc图像", "image:csc_graph.svg"],
+        ["\\cot图像", "image:cot_graph.png"],
+        ["\\tan图像", "image:tan_graph.png"],
+        ["\\cos图像", "image:cos_graph.png"],
+        ["\\sin图像", "image:sin_graph.png"],
+        ["对数函数性质", "\\displaylines{底数a>0且a\\neq1 \\\\ a\\in(0,1)为减函数 \\\\ a>1时为增函数 \\\\ 定义域(0, +\\infty), 值域R}"],
+        ["对数函数图像", "image:log_graph.png"],
+        ["指数函数性质", "\\displaylines{底数a>0且a\\neq1 \\\\ a\\in(0,1)为减函数 \\\\ a>1时为增函数 \\\\ 定义域R, 值域(0, +\\infty)}"],
+        ["指数函数图像", "image:exp_graph.png"],
+
+        ["\\int \\csc^3(x)\\sec(x)", "1可以看做\\sin^2 + \\cos^2"],
+        ["\\int \\frac{x^2+1}{x^4-x^2+1}", "\\displaylines{因式分解不了的,就配方 \\\\ 每次变动后检查能否换元 \\\\ 尝试配成常见的导数}"],
+        ["\\int \\frac{\\cos(2x)}{\\sin(x)+\\cos(x)}", "\\cos(2x)变成平方差\\cos^2(x)-\\sin^2(x)"],
+        ["求\\int \\sec(x)的思路", "\\displaylines{\\sec(x) * \\frac{\\sec(x)+\\tan(x)}{\\sec(x)+\\tan(x)} \\\\ 构造\\frac{f'(x)}{f(x)}}"],
+
+        ["\\sqrt{x^2-a^2}, 三角替换", "\\displaylines{x=a\\sec(\\theta) \\\\ x^2-a^a=a^2\\tan^2(\\theta) \\\\ 考虑绝对值, x<0时, 对边为负 }"],
+        ["\\sqrt{a^2+x^2}, 三角替换", "\\displaylines{x=a\\tan(\\theta) \\\\ a^2+x^2=a^2\\sec^2(\\theta)}"],
+        ["\\sqrt{a^2-x^2}, 三角替换", "\\displaylines{x=a\\sin(\\theta) \\\\ a^2-x^2=a^2\\cos^2(\\theta)}"],
+        ["\\int b^xdx=?", "\\frac{b^x}{ln(b)}+C"],
+        ["\\int x^adx=?(a \\neq 1)", "\\frac{x^{a+1}}{a+1}+C"],
+        ["\\int \\frac{1}{t^2+a^2}dt=?", "\\frac{1}{a} tan^{-1}(\\frac{t}{a}) + C"],
+        ["积分中值定理", "image:integral_mean_value_theorem.png"],
+
+        ["洛必达法则的适用情况", "\\frac{0}{0}, \\frac{\\infty}{\\infty}, 若不是这个形式，可以尝试通分、取对数等方式转化"],
+        ["极限为指数时使用洛必达", "text:对原式取ln对数, 指数可提到前面来。最后算出极限为L，原式极限为e^L"],
+        ["0 * \\infty时使用洛必达", "化成\\frac{\\infty}{\\frac{1}{0}}的形式, 即  (\\frac{\\infty}{\\infty})"],
+        ["\\infty - \\infty时使用洛必达", "想办法通分成\\frac{0}{0}或\\frac{\\infty}{\\infty}的形式"],
+
+        ["\\displaylines{牛顿法近似 \\\\ a是f(x)=0的一个近似}", "b=a-\\frac{f(a)}{f'(a)}"],
+        ["f在x=a处的微分", "df=f'(a)\\triangle x"],
+        ["f(a+\\triangle x)\\approx", "f(a)+f'(a)\\triangle x"],
+        ["线性化方程L(x)", "L(x)=f(a)+f'(a)(x-a)"],
+
+        ["\\sin(A)\\cos(B)", "\\frac{1}{2}(\\sin(A-B)+\\sin(A+B))"],
+        ["\\sin(A)\\sin(B)", "\\frac{1}{2}(\\cos(A-B)-\\cos(A+B))"],
+        ["\\cos(A)\\cos(B)", "\\frac{1}{2}(\\cos(A-B)+\\cos(A+B))"],
+        ["\\cos(2x)=?", "\\displaylines{\\cos^2(x)-\\sin^2(x) \\\\ 1-2\\sin^2(x) \\\\ 2\\cos^2(x)-1 \\\\ \\frac{1-\\tan^2(x)}{1+\\tan^2(x)}}"],
+        ["\\sin(2x)=?", "2\\sin(x)\\cos(x)"],
+        ["\\sin^2(x)=?", "\\frac{1}{2}(1-\\cos(2x))"],
+        ["\\cos^2(x)=?", "\\frac{1}{2}(1+\\cos(2x))"],
+    ],
+
+    "thought": [
+    ],
+
+    "integral": [
+        ["\\frac{...}{(...)(x+a)^3},怎么拆", "... + \\frac{A}{(x+a)^3} + \\frac{B}{(x+a)^2} + \\frac{C}{(x+a)}"],
+        ["\\frac{...}{(...)(x^2+ax+b)},怎么拆", "... + \\frac{Ax+B}{x^2+ax+b}"],
+        ["\\frac{...}{(...)(x+a)^2},怎么拆", "... + \\frac{A}{(x+a)^2} + \\frac{B}{(x+a)}"],
+        ["\\frac{...}{(...)(x+a)},怎么拆", "... + \\frac{A}{(x+a)}"],
+        ["分部积分法", "\\int udv = uv - \\int vdu"],
+        ["\\int \\frac{f'(x)}{f(x)}dx=?", "ln|f(x)| + C"],
+        ["\\displaylines{\\int_{a}^{b}f(x)dx=? \\\\ F(x)是f的任意反导数}", "F(b)-F(a)"],
+        ["\\frac{d}{dx}\\int_{a}^{x}f(t)dt=?", "f(x)"],
+    ],
+
+    "series": [
+        ["\\int_{a}^{b}(f(x)+g(x))dx=?", "\\int_{a}^{b}f(x)dx + \\int_{a}^{b}g(x)dx"],
+        ["\\int_{a}^{b}Cf(x)dx=?", "C\\int_{a}^{b}f(x)dx=?"],
+        ["\\int_{a}^{c}f(x)dx + \\int_{c}^{b}f(x)dx = ?", "\\int_{a}^{b}f(x)dx"],
+        ["\\int_{a}^{a}f(x)dx=?", "0"],
+        ["\\int_{a}^{b}f(x)dx=(\\text{what})\\int_{b}^{a}f(x)dx", "\\int_{a}^{b}f(x)dx=(-1)\\int_{b}^{a}f(x)dx"],
+        ["\\int_{-a}^{a}f(x)dx=?", "如果f(x)是奇函数的话，积分值等于0"],
+        ["\\sum_{i=1}^{n}i^2=?", "\\frac{n(n+1)(2n+1)}{6}"],
+        ["\\sum_{i=1}^{n}i^2=?", "\\frac{n(n+1)(2n+1)}{6}"],
+        ["\\sum_{i=1}^{n}i=?", "\\frac{n(n+1)}{2}"],
+        ["\\sum_{i=1}^{n}(x_{i} + y_{i})", "\\sum_{i=1}^{n}x_{i} + \\sum_{i=1}^{n}y_{i}"],
+        ["\\sum_{i=a}^{n}c", "(n-a+1)*c"],
+        ["\\sum_{i=1}^{n}cx_{i}", "c\\sum_{i=1}^{n}x_{i}"],
+        ["\\sum_{j=1}^{n}(2j-1)=?", "n^2"],
+        ["\\sum_{j=a}^{b}(f(j)-f(j-1))=?", "f(b) - f(a-1)"],
+        ["\\sum_{m=100}^{1000} 1=?", "(1000 - 100 + 1) * 1"],
+        ["\\sum_{m=1}^{200} 5=?", "200 * 5"],
+    ],
+
+    "calc": [
+        ["f''(x)的正负代表什么？", "\\displaylines{f''(x)>0代表函数凹向上 \\\\ f''(x)<0代表函数凹向下}"],
+        ["二阶导如何判断f'(a)=0的类型", "\\displaylines{f''(a)>0=局部最小值 \\\\ f''(a)<0=局部最大值 \\\\ f''(a)=0 无法判断 }"],
+        ["一阶导如何判断f'(a)=0的类型", "\\displaylines{从左往右通过a点: \\\\ f'(x)从负到正=局部最小值 \\\\ f'(x)从正到负=局部最大值 \\\\ f'(x)符号不变=拐点 }"],
+        ["f'(a)=0代表什么？", "text:a点可能是f(x)的局部最大值、局部最小值，或拐点"],
+        ["f''(c)=0 意味着拐点吗?", "c不一定是拐点"],
+        ["c是函数拐点代表什么", "f''(c)=0"],
+        ["介值定理", "image:intermediate_value_theorem.png"],
+        ["连续的定义？", "\\displaylines{\\lim_{x \\to a}{f(x)}=f(a) \\\\ f在点a处连续 }"],
+        ["极值定理", "image:extreme_value_theorem.png"],
+        ["罗尔定理", "image:rolles_theorem.png"],
+        ["中值定理", "image:mean_value_theorem.png"],
+    ],
+
+    "arc": [
+        ["\\text{graph of: } \\csc^{-1}(x)", "image:arccsc_graph.png"],
+        ["\\text{graph of: } \\cot^{-1}(x)", "image:arccot_graph.png"],
+        ["\\text{graph of: } \\tan^{-1}(x)", "image:arctan_graph.png"],
+        ["\\text{graph of: } \\cos^{-1}(x)", "image:arccos_graph.png"],
+        ["\\text{graph of: } \\sin^{-1}(x)", "image:arcsin_graph.png"],
+        ["\\text{graph of: } \\sec^{-1}(x)", "image:arcsec_graph.png"],
+        ["\\tan^{-1}(x)的奇偶性和定义域", "奇函数,R, (-\\frac{\\pi}{2}, \\frac{\\pi}{2})"],
+        ["\\cos^{-1}(x)的奇偶性和定义域", "无奇偶,[-1, 1], [0, \\pi]"],
+        ["\\sin^{-1}(x)的奇偶性和定义域", "奇函数, [-1, 1], [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]"],
+        ["\\cot^{-1}(x)的奇偶性和定义域", "无奇偶,R,(0,\\pi)"],
+        ["\\csc^{-1}(x)的奇偶性和定义域", "\\displaylines{奇函数,(-\\infty, -1] \\cup [1, \\infty) \\\\ [-\\frac{\\pi}{2},\\frac{\\pi}{2}] \\setminus \\{0\\}}"],
+        ["\\sec^{-1}(x)的奇偶性和定义域", "\\displaylines{无奇偶,(-\\infty, -1] \\cup [1, \\infty) \\\\ [0,\\pi] \\setminus \\{\\frac{\\pi}{2}\\}}"],
+        ["\\frac{d}{dx}\\csc^{-1}(x)=?", "-\\frac{1}{|x|\\sqrt{x^2-1}}"],
+        ["\\frac{d}{dx}\\tan^{-1}(x)=?", "\\frac{1}{1+x^2}"],
+        ["\\frac{d}{dx}\\cot^{-1}(x)=?", "-\\frac{1}{1+x^2}"],
+        ["\\frac{d}{dx}\\cos^{-1}(x)=?", "-\\frac{1}{\\sqrt{1-x^2}}"],
+        ["\\frac{d}{dx}\\sin^{-1}(x)=?", "\\frac{1}{\\sqrt{1-x^2}}"],
+        ["\\frac{d}{dx}\\sec^{-1}(x)=?", "\\frac{1}{|x|\\sqrt{x^2-1}}"],
+        ["\\lim_{x \\to -\\infty}\\sec^{-1}(x)=?", "\\frac{\\pi}{2}"],
+        ["\\lim_{x \\to \\infty}\\sec^{-1}(x)=?", "\\frac{\\pi}{2}"],
+        ["\\lim_{x \\to \\infty}\\csc^{-1}(x)=?", "0"],
+        ["\\lim_{x \\to -\\infty}\\csc^{-1}(x)=?", "0"],
+        ["\\lim_{x \\to \\infty}\\cot^{-1}(x)=?", "0"],
+        ["\\lim_{x \\to -\\infty}\\cot^{-1}(x)=?", "\\pi"],
+        ["\\lim_{x \\to -\\infty}\\tan^{-1}(x)=?", "-\\frac{\\pi}{2}"],
+        ["\\lim_{x \\to \\infty}\\tan^{-1}(x)=?", "\\frac{\\pi}{2}"],
+        ["\\sin^{-1}(x) + \\cos^{-1}(x)=?", "\\frac{\\pi}{2}"],
+    ],
+
     "trig": [
+        ["描述三角函数的奇偶性", "\\cos和\\sec为偶函数，其余为奇"],
+        ["\\frac{d}{dx}\\sinh(x)=?", "\\cosh(x)"],
+        ["\\frac{d}{dx}\\cosh(x)=?", "\\sinh(x)"],
+        ["\\cosh^2(x)-\\sinh^2(x)=?", "1"],
+        ["\\sinh(x)=?", "\\frac{e^x-e^{-x}}{2}"],
+        ["\\cosh(x)=?", "\\frac{e^x+e^{-x}}{2}"],
         ["\\sin(\\frac{π}{6})", "\\frac {1}{2}"],
         ["\\sin(0)", "0"],
         ["\\sin(\\frac{π}{4})", "\\frac{\\sqrt{2}}{2}"],
@@ -64,8 +192,33 @@ const all_cards = {
         ["\\frac{d}{dx} \\log_{b}{(x)}", "\\frac{1}{x\\ln{(b)}}"],
         ["\\frac{d}{dx} (b^x)", "b^x\\ln{(b)}"],
         ["\\frac{d}{dx} (e^x)", "e^x"],
+        ["\\lim_{h \\to 0}{\\frac{e^h-1}{h}}", "1"],
+        ["\\lim_{h \\to 0}{\\frac{\\ln{(1+h)}}{h}}", "1"],
+        ["\\lim_{x \\to -\\infty}{e^x}", "0"],
+        ["\\lim_{x \\to \\infty}{e^x}", "\\infty"],
+        [ "\\lim_{x \\to \\infty}{r^x}", "\\lim_{x \\to \\infty}{r^x} =\\begin{cases}" +
+        "\\infty &\\text{if r>1} \\\\ 1 &\\text{if r=1} \\\\ 0 &\\text{if 0 $\\le$ r<1}\\end{cases}"],
+        ["\\lim_{x \\to \\infty}{\\frac{x^n}{e^x}}=0 代表什么?", "指数函数增长迅速"],
+        ["\\lim_{x \\to \\infty}{\\frac{\\ln{x}}{x^a}}(a>0)", "0"],
+        ["\\lim_{x \\to 0^+}{x^a\\ln{(x)}},(a>0)", "0(对数函数增长缓慢)"],
+        ["\\frac{dy}{dx}=ky意味着什么?", "y=Ae^{kx}, A为常数"],
     ]
 };
 
-const data = all_cards["trig"];
+let data = [];
+const keys = [
+    // "new",
+    // "thought",
+    // "integral",
+    // "series",
+    // "calc",
+    "arc",
+    "trig",
+    "log",
+];
+
+keys.forEach(key => {
+    data = data.concat( all_cards[key] );
+});
+
 data.dev = false;
