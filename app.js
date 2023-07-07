@@ -15,13 +15,27 @@ let round = 0;
 let pointer = 0;
 let answer = false;
 
+const timer = {
+    seconds: 0,
+    started: false,
+    el: document.getElementById("roundTimer"),
+};
+
 // Confetti Animation
 const confetti = new JSConfetti();
 
 // Set Total Card Number
 totalNumber.textContent = cards.length.toString();
 
+const recordTimer = document.getElementById("recordTimer");
+
 function update() {
+    if( pointer === 0 ) {
+        const keys_local = keys.sort().join("_");
+        const record = localStorage.getItem(keys_local );
+        recordTimer.textContent = formatTimeString(record);
+    }
+
     const card = cards[pointer];
     const content = answer ? card[1] : card[0];
     answer ? dCard.classList.add("answer") : dCard.classList.remove("answer");
@@ -90,6 +104,20 @@ function restart() {
     // Play Confetti Animation Per Round
     confetti.addConfetti();
 
+    // Record & Restart Timer
+    let store_seconds = timer.seconds;
+    const timer_key = keys.sort().join("_");
+    const old = localStorage.getItem( timer_key ) || null;
+
+    let old_num = parseInt( old );
+    if( ! isNaN(old_num) ) {
+        store_seconds = Math.min( old_num, store_seconds );
+    }
+    localStorage.setItem( timer_key, store_seconds.toString() );
+
+    timer.seconds = 0;
+    updateTimer();
+
     dRoundCounter.textContent = round;
     setTimeout(() => {
         dApp.classList.remove("done");
@@ -101,6 +129,26 @@ function prev() {
     pointer --;
     if( pointer <= 0 ) pointer = cards.length - 1;
     update();
+}
+
+function formatTimeString( seconds ) {
+    let overflow = false;
+    let minutes = Math.floor( seconds / 60 );
+
+    if( minutes > 99 ) {
+        minutes = 99;
+        overflow = true;
+    }
+
+    let sec = overflow ? 59 : seconds % 60;
+
+    return minutes.toString().padStart(2, "0")
+        + ":"
+        + sec.toString().padStart(2, "0");
+}
+
+function updateTimer() {
+    timer.el.textContent = formatTimeString( timer.seconds );
 }
 
 function next() {
@@ -137,3 +185,8 @@ function event() {
 event();
 update();
 
+timer.started = true;
+timer.tid = setInterval(() => {
+    timer.seconds ++;
+    updateTimer();
+}, 1000 );
