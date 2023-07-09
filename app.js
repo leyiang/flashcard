@@ -26,7 +26,7 @@ function event() {
         }
 
         if( e.key === "ArrowLeft" ) {
-            prev();
+            round.prev();
         }
     });
 }

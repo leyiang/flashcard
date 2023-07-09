@@ -50,7 +50,7 @@ export default class Round {
         } else if ( content.startsWith("text:") ) {
             this.renderText( content.slice(5) );
         } else {
-            this.renderLatex( content );
+            this.renderLatex(`\\displaylines{${content}}`);
         }
     }
 

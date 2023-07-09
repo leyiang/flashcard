@@ -4,7 +4,7 @@ export default {
         ["\\sin(A)\\cos(B)", "\\frac{1}{2}(\\sin(A-B)+\\sin(A+B))"],
         ["\\sin(A)\\sin(B)", "\\frac{1}{2}(\\cos(A-B)-\\cos(A+B))"],
         ["\\cos(A)\\cos(B)", "\\frac{1}{2}(\\cos(A-B)+\\cos(A+B))"],
-        ["\\cos(2x)=?", "\\displaylines{\\cos^2(x)-\\sin^2(x) \\\\ 1-2\\sin^2(x) \\\\ 2\\cos^2(x)-1 \\\\ \\frac{1-\\tan^2(x)}{1+\\tan^2(x)}}"],
+        ["\\cos(2x)=?", "\\cos^2(x)-\\sin^2(x) \\\\ 1-2\\sin^2(x) \\\\ 2\\cos^2(x)-1 \\\\ \\frac{1-\\tan^2(x)}{1+\\tan^2(x)}"],
         ["\\sin(2x)=?", "2\\sin(x)\\cos(x)"],
         ["\\sin^2(x)=?", "\\frac{1}{2}(1-\\cos(2x))"],
         ["\\cos^2(x)=?", "\\frac{1}{2}(1+\\cos(2x))"],
@@ -53,8 +53,8 @@ export default {
         ["\\frac{d}{dx}\\cot(x)=?", "-\\csc^2(x)"],
         ["\\frac{d}{dx}\\sec(x)=?", "\\sec(x)\\tan(x)"],
         ["\\frac{d}{dx}\\csc(x)=?", "-\\csc(x)\\cot(x)"],
-        ["\\displaylines{h(x)=f(x)g(x) \\\\ h'(x) = ?}\n", "f'(x)g(x)+f(x)g'(x)"],
-        ["\\displaylines{h(x)=\\frac{f(x)}{g(x)} \\\\ h'(x) = ?}\n", "\\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}"],
-        ["\\displaylines{h(x)=f[g(x)] \\\\ h'(x) = ?}\n", "f'[g(x)]g'(x)"],
+        ["h(x)=f(x)g(x) \\\\ h'(x) = ?", "f'(x)g(x)+f(x)g'(x)"],
+        ["h(x)=\\frac{f(x)}{g(x)} \\\\ h'(x) = ?", "\\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}"],
+        ["h(x)=f[g(x)] \\\\ h'(x) = ?", "f'[g(x)]g'(x)"],
     ]
 }

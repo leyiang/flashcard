@@ -8,20 +8,22 @@ import pack_new from "./pack_new.js"
 import pack_series from "./pack_series.js"
 import pack_trig from "./pack_trig.js"
 
-const card_packs = [
+let card_packs = [
     pack_arc,
     pack_basic,
     pack_thought,
     pack_calc,
     pack_integral,
     pack_log,
-    pack_new,
     pack_series,
     pack_trig,
+    pack_new,
 ];
 
+const dev = true;
+if( dev ) card_packs = [pack_new];
+
 const cards = {
-    dev: false,
     data: [],
     keys: card_packs.map( pack => pack.name )
 };
@@ -31,7 +33,7 @@ card_packs.forEach(card_pack => {
 });
 
 /** Shuffle **/
-if( ! cards.dev ) {
+if( ! dev ) {
     cards.data = shuffle( shuffle(cards.data) );
 }
 
