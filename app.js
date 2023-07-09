@@ -1,42 +1,35 @@
+import { cards } from "./cards/data.js";
+import Timer from "./Timer.js";
+
 const dApp = document.getElementById("app");
 const dCard = document.getElementById("card");
 const dRoundCounter = document.querySelector(".round-counter");
 const currentNumber = document.querySelector(".current-card-number");
 const totalNumber = document.querySelector(".total-card-number");
 
-/**
- * dev 指在添加新的卡片内容，为了方便测试，不要随机打乱
- */
-let cards = data.dev
-    ? data.slice()
-    : shuffle( shuffle( data.slice() ) );
-
 let round = 0;
 let pointer = 0;
 let answer = false;
 
-const timer = {
-    seconds: 0,
-    started: false,
-    el: document.getElementById("roundTimer"),
-};
+const timerEL = document.getElementById("roundTimer");
 
 // Confetti Animation
 const confetti = new JSConfetti();
 
 // Set Total Card Number
-totalNumber.textContent = cards.length.toString();
+totalNumber.textContent = cards.data.length.toString();
 
 const recordTimer = document.getElementById("recordTimer");
 
 function update() {
     if( pointer === 0 ) {
-        const keys_local = keys.sort().join("_");
+        const keys_local = cards.keys.sort().join("_");
         const record = localStorage.getItem(keys_local );
-        recordTimer.textContent = formatTimeString(record);
+        recordTimer.textContent = Timer.Format(record);
     }
 
-    const card = cards[pointer];
+    const card = cards.data[pointer];
+    console.log( cards.data );
     const content = answer ? card[1] : card[0];
     answer ? dCard.classList.add("answer") : dCard.classList.remove("answer");
 
@@ -99,14 +92,14 @@ function restart() {
     round ++;
     pointer = 0;
 
-    cards = shuffle( cards );
+    cards.data = shuffle( cards.data );
 
     // Play Confetti Animation Per Round
     confetti.addConfetti();
 
     // Record & Restart Timer
     let store_seconds = timer.seconds;
-    const timer_key = keys.sort().join("_");
+    const timer_key = cards.keys.sort().join("_");
     const old = localStorage.getItem( timer_key ) || null;
 
     let old_num = parseInt( old );
@@ -115,8 +108,7 @@ function restart() {
     }
     localStorage.setItem( timer_key, store_seconds.toString() );
 
-    timer.seconds = 0;
-    updateTimer();
+    timer.restart();
 
     dRoundCounter.textContent = round;
     setTimeout(() => {
@@ -127,34 +119,14 @@ function restart() {
 function prev() {
     answer = false;
     pointer --;
-    if( pointer <= 0 ) pointer = cards.length - 1;
+    if( pointer <= 0 ) pointer = cards.data.length - 1;
     update();
-}
-
-function formatTimeString( seconds ) {
-    let overflow = false;
-    let minutes = Math.floor( seconds / 60 );
-
-    if( minutes > 99 ) {
-        minutes = 99;
-        overflow = true;
-    }
-
-    let sec = overflow ? 59 : seconds % 60;
-
-    return minutes.toString().padStart(2, "0")
-        + ":"
-        + sec.toString().padStart(2, "0");
-}
-
-function updateTimer() {
-    timer.el.textContent = formatTimeString( timer.seconds );
 }
 
 function next() {
      answer = false;
      pointer ++;
-     if( pointer >= cards.length ) restart();
+     if( pointer >= cards.data.length ) restart();
      update();
 }
 
@@ -185,8 +157,8 @@ function event() {
 event();
 update();
 
-timer.started = true;
-timer.tid = setInterval(() => {
-    timer.seconds ++;
-    updateTimer();
-}, 1000 );
+const timer = new Timer(() => {
+    timerEL.textContent = Timer.Format( timer.seconds );
+});
+
+timer.start();

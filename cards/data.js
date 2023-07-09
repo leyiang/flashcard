@@ -10,14 +10,14 @@ import pack_trig from "./pack_trig.js"
 
 const card_packs = [
     pack_arc,
-    pack_basic,
-    pack_thought,
-    pack_calc,
-    pack_integral,
-    pack_log,
-    pack_new,
-    pack_series,
-    pack_trig,
+    // pack_basic,
+    // pack_thought,
+    // pack_calc,
+    // pack_integral,
+    // pack_log,
+    // pack_new,
+    // pack_series,
+    // pack_trig,
 ];
 
 const cards = {
