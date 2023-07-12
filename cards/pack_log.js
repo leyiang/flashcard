@@ -1,6 +1,8 @@
 export default {
     name: "log",
     cards: [
+        [ "\\lim_{x \\to \\infty}{r^x}", "\\lim_{x \\to \\infty}{r^x} =\\begin{cases}" +
+        "\\infty &\\text{if r>1} \\\\ 1 &\\text{if r=1} \\\\ 0 &\\text{if -1<r<1} \\\\ DNE &\\text{if r $\\le$ -1} \\end{cases}"],
         ["b^xb^y=?", "b^{(x+y)}"],
         ["\\frac{b^x}{b^y}=?", "b^{(x-y)}"],
         ["(b^x)^y=?", "b^{xy}"],
@@ -24,8 +26,6 @@ export default {
         ["\\lim_{h \\to 0}{\\frac{\\ln{(1+h)}}{h}}", "1"],
         ["\\lim_{x \\to -\\infty}{e^x}", "0"],
         ["\\lim_{x \\to \\infty}{e^x}", "\\infty"],
-        [ "\\lim_{x \\to \\infty}{r^x}", "\\lim_{x \\to \\infty}{r^x} =\\begin{cases}" +
-        "\\infty &\\text{if r>1} \\\\ 1 &\\text{if r=1} \\\\ 0 &\\text{if 0 $\\le$ r<1}\\end{cases}"],
         ["\\lim_{x \\to \\infty}{\\frac{x^n}{e^x}}=0 代表什么?", "指数函数增长迅速"],
         ["\\lim_{x \\to \\infty}{\\frac{\\ln{x}}{x^a}}(a>0)", "0"],
         ["\\lim_{x \\to 0^+}{x^a\\ln{(x)}},(a>0)", "0(对数函数增长缓慢)"],

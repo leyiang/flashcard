@@ -17,11 +17,17 @@ let card_packs = [
     pack_log,
     pack_series,
     pack_trig,
-    pack_new,
+    // pack_new,
 ];
+const config = {
+    random: true,
+    newMode: false,
+}
 
-const dev = true;
-if( dev ) card_packs = [pack_new];
+config.random = false;
+config.newMode = true;
+
+if( config.newMode ) card_packs = [pack_new];
 
 const cards = {
     data: [],
@@ -33,7 +39,7 @@ card_packs.forEach(card_pack => {
 });
 
 /** Shuffle **/
-if( ! dev ) {
+if( config.random ) {
     cards.data = shuffle( shuffle(cards.data) );
 }
 
