@@ -24,7 +24,7 @@ const config = {
     newMode: false,
 }
 
-config.random = false;
+// config.random = false;
 config.newMode = true;
 
 if( config.newMode ) card_packs = [pack_new];
