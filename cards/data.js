@@ -17,7 +17,7 @@ let card_packs = [
     pack_log,
     pack_series,
     pack_trig,
-    // pack_new,
+    pack_new,
 ];
 const config = {
     random: true,
@@ -25,7 +25,7 @@ const config = {
 }
 
 // config.random = false;
-config.newMode = true;
+// config.newMode = true;
 
 if( config.newMode ) card_packs = [pack_new];
 
