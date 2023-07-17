@@ -1,29 +1,38 @@
 import { config } from "../config.js";
-import pack_arc from "./pack_arc.js"
-import pack_basic from "./pack_basic.js"
-import pack_thought from "./pack_thought.js"
-import pack_calc from "./pack_calc.js"
-import pack_integral from "./pack_integral.js"
-import pack_log from "./pack_log.js"
-import pack_new from "./pack_new.js"
-import pack_series from "./pack_series.js"
-import pack_trig from "./pack_trig.js"
+import { import_map } from "./import_map.js";
 
-let card_packs = [
-    pack_arc,
-    pack_basic,
-    pack_thought,
-    pack_calc,
-    pack_integral,
-    pack_log,
-    pack_series,
-    pack_trig,
-    pack_new,
-];
+const subject = "math";
+let card_packs = import_map[ subject ];
 
-if( config.newMode ) card_packs = [pack_new];
+const mode = {
+    ADD_NEW: false,
+    RECITE_NEW: false,
+    RECITE_ALL: false,
+}
+
+// mode.ADD_NEW = true;
+// mode.RECITE_NEW = true;
+mode.RECITE_ALL = true;
+
+if( mode.ADD_NEW ) {
+    config.random = false;
+    config.new = true;
+} else if( mode.RECITE_NEW ) {
+    config.random = true;
+    config.new = true;
+} else if( mode.RECITE_ALL ) {
+    config.random = true;
+    config.new = false;
+}
+
+if( config.new ) {
+    card_packs = card_packs.filter(pack => pack.name === "new" );
+} else {
+    card_packs = card_packs.filter(pack => pack.name !== "new" );
+}
 
 const cards = {
+    subject,
     data: [],
     keys: card_packs.map( pack => pack.name )
 };
