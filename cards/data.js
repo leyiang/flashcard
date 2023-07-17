@@ -11,8 +11,9 @@ const mode = {
 }
 
 // mode.ADD_NEW = true;
-// mode.RECITE_NEW = true;
-mode.RECITE_ALL = true;
+mode.RECITE_NEW = true;
+// mode.RECITE_ALL = true;
+
 
 if( mode.ADD_NEW ) {
     config.random = false;
@@ -44,6 +45,7 @@ card_packs.forEach(card_pack => {
 /** Shuffle **/
 if( config.random ) {
     cards.data = shuffle( shuffle(cards.data) );
+    shuffleArray( cards.data );
 }
 
 export { cards };
