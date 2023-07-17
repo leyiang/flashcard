@@ -1,3 +1,4 @@
+import { config } from "../config.js";
 import pack_arc from "./pack_arc.js"
 import pack_basic from "./pack_basic.js"
 import pack_thought from "./pack_thought.js"
@@ -17,15 +18,8 @@ let card_packs = [
     pack_log,
     pack_series,
     pack_trig,
-    // pack_new,
+    pack_new,
 ];
-const config = {
-    random: true,
-    newMode: false,
-}
-
-// config.random = false;
-config.newMode = true;
 
 if( config.newMode ) card_packs = [pack_new];
 
