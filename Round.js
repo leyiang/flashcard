@@ -18,7 +18,7 @@ export default class Round {
 
     start() {
         // Store
-        const keys_local = cards.keys.sort().join("_");
+        const keys_local = cards.subject + "_" + cards.keys.sort().join("_");
         const record = localStorage.getItem(keys_local );
         this.info.recordEL.textContent = Timer.Format(record);
 
@@ -107,7 +107,7 @@ export default class Round {
 
         // Record & Restart Timer
         let store_seconds = this.timer.seconds;
-        const timer_key = cards.keys.sort().join("_");
+        const timer_key = cards.subject + "_" + cards.keys.sort().join("_");
         const old = localStorage.getItem( timer_key ) || null;
 
         let old_num = parseInt( old );
