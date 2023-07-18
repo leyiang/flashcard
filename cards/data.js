@@ -1,27 +1,15 @@
 import { config } from "../config.js";
 import { import_map } from "./import_map.js";
 
-const subject = "math";
-let card_packs = import_map[ subject ];
+let card_packs = import_map[ config.subject ];
 
-const mode = {
-    ADD_NEW: false,
-    RECITE_NEW: false,
-    RECITE_ALL: false,
-}
-
-// mode.ADD_NEW = true;
-mode.RECITE_NEW = true;
-// mode.RECITE_ALL = true;
-
-
-if( mode.ADD_NEW ) {
+if( config.mode.ADD_NEW ) {
     config.random = false;
     config.new = true;
-} else if( mode.RECITE_NEW ) {
+} else if( config.mode.RECITE_NEW ) {
     config.random = true;
     config.new = true;
-} else if( mode.RECITE_ALL ) {
+} else if( config.mode.RECITE_ALL ) {
     config.random = true;
     config.new = false;
 }
@@ -33,7 +21,7 @@ if( config.new ) {
 }
 
 const cards = {
-    subject,
+    subject: config.subject,
     data: [],
     keys: card_packs.map( pack => pack.name )
 };

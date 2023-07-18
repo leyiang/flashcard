@@ -33,3 +33,12 @@ function event() {
 
 event();
 round.start();
+
+const oldMode = localStorage.getItem("mode");
+document.querySelectorAll(".radio-group input").forEach( radio => {
+    if( radio.id === oldMode ) radio.checked = true;
+
+    radio.addEventListener("input", e => {
+        localStorage.setItem("mode", radio.id );
+    });
+});
