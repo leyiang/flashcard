@@ -1,6 +1,7 @@
 export default {
     name: "calc",
     cards: [
+        ["\\frac{d}{dx}\\sinh^{-1}(x)","\\frac{1}{\\sqrt{x^2+1}}"],
         ["洛必达法则的适用情况", "\\frac{0}{0}, \\frac{\\infty}{\\infty}, 若不是这个形式 \\\\ 可以尝试通分, 取对数, 等方式转化"],
         ["牛顿法近似 \\\\ a是f(x)=0的一个近似", "b=a-\\frac{f(a)}{f'(a)}"],
         ["f在x=a处的微分", "df=f'(a)\\triangle x"],

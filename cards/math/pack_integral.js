@@ -1,6 +1,8 @@
 export default {
     name: "integral",
     cards: [
+        ["曲线绕y轴旋转的体积:","\\int_{a}^b 2\\pi xydx"],
+        ["曲线绕x轴旋转的体积:","\\int_{a}^b \\pi y^2dx"],
         ["\\sqrt{x^2-a^2}, 三角替换", "x=a\\sec(\\theta) \\\\ x^2-a^a=a^2\\tan^2(\\theta) \\\\ 考虑绝对值, x<0时, 对边为负 "],
         ["\\sqrt{a^2+x^2}, 三角替换", "x=a\\tan(\\theta) \\\\ a^2+x^2=a^2\\sec^2(\\theta)"],
         ["\\sqrt{a^2-x^2}, 三角替换", "x=a\\sin(\\theta) \\\\ a^2-x^2=a^2\\cos^2(\\theta)"],
