@@ -1,9 +1,18 @@
 const config = {
     random: true,
     newMode: false,
+    subject: "math",
+    mode: {
+        ADD_NEW: false,
+        RECITE_NEW: false,
+        RECITE_ALL: false,
+    }
 }
 
-// config.random = false;
-// config.newMode = true;
+const mode = localStorage.getItem("mode");
+config.mode[ mode ] = true;
+
+config.random = false;
+config.newMode = true
 
 export { config };
