@@ -46,10 +46,21 @@ export default class Round {
         this.info.cardEL.innerHTML = "";
         if( content.startsWith("image:") ) {
             // Render Image
+            this.info.cardEL.classList.remove("render-latex");
+            this.info.cardEL.classList.remove("render-text");
+            this.info.cardEL.classList.add("render-image");
             this.renderImage( content.slice(6) );
         } else if ( content.startsWith("text:") ) {
+            this.info.cardEL.classList.remove("render-latex");
+            this.info.cardEL.classList.remove("render-image");
+            this.info.cardEL.classList.add("render-text");
+
             this.renderText( content.slice(5) );
         } else {
+            this.info.cardEL.classList.remove("render-text");
+            this.info.cardEL.classList.remove("render-image");
+            this.info.cardEL.classList.add("render-latex");
+
             this.renderLatex(`\\displaylines{${content}}`);
         }
     }

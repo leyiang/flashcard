@@ -51,6 +51,15 @@ body, html {
     touch-action: manipulation;
 }
 
+#card.render-latex {
+    width: unset;
+    height: unset;
+    min-width: 700px;
+    min-height: 500px;
+    max-height: 80%;
+    max-width: 80%;
+}
+
 
 #card.answer::before {
     content: 'Answer';
