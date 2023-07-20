@@ -3,6 +3,10 @@ import Timer from "./Timer.js";
 
 const timerEL = document.getElementById("roundTimer");
 
+function getRecordKey() {
+    return cards.subject + "_" + cards.data.length + "_" + cards.keys.sort().join("_")
+}
+
 export default class Round {
     constructor( info ) {
         this.round = 0;
@@ -18,7 +22,7 @@ export default class Round {
 
     start() {
         // Store
-        const keys_local = cards.subject + "_" + cards.keys.sort().join("_");
+        const keys_local = getRecordKey();
         const record = localStorage.getItem(keys_local );
         this.info.recordEL.textContent = Timer.Format(record);
 
@@ -118,7 +122,7 @@ export default class Round {
 
         // Record & Restart Timer
         let store_seconds = this.timer.seconds;
-        const timer_key = cards.subject + "_" + cards.keys.sort().join("_");
+        const timer_key = getRecordKey();
         const old = localStorage.getItem( timer_key ) || null;
 
         let old_num = parseInt( old );
