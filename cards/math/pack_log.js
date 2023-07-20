@@ -2,7 +2,7 @@ export default {
     name: "log",
     cards: [
         [ "\\lim_{x \\to \\infty}{r^x}", "\\lim_{x \\to \\infty}{r^x} =\\begin{cases}" +
-        "\\infty &\\text{if r>1} \\\\ 1 &\\text{if r=1} \\\\ 0 &\\text{if -1<r<1} \\\\ DNE &\\text{if r $\\le$ -1} \\end{cases}"],
+        "+\\infty &\\text{if r>1} \\\\ 1 &\\text{if r=1} \\\\ 0 &\\text{if |r|<1} \\\\ DNE &\\text{if r=-1} \\\\ (-1)^x|r|^x &\\text{if r<1} \\end{cases} \\\\ 特别的, r<1时极限在负无穷和正无穷振荡"],
         ["b^xb^y=?", "b^{(x+y)}"],
         ["\\frac{b^x}{b^y}=?", "b^{(x-y)}"],
         ["(b^x)^y=?", "b^{xy}"],
