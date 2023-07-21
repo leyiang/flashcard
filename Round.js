@@ -1,5 +1,6 @@
 import { cards } from "./cards/data.js";
 import Timer from "./Timer.js";
+import { config } from "./config.js";
 
 const timerEL = document.getElementById("roundTimer");
 
@@ -48,23 +49,20 @@ export default class Round {
 
     render( content ) {
         this.info.cardEL.innerHTML = "";
+        this.info.cardEL.classList.remove("too-long");
+        this.info.cardEL.classList.remove("render-text");
+        this.info.cardEL.classList.remove("render-latex");
+        this.info.cardEL.classList.remove("render-image");
+
         if( content.startsWith("image:") ) {
             // Render Image
-            this.info.cardEL.classList.remove("render-latex");
-            this.info.cardEL.classList.remove("render-text");
             this.info.cardEL.classList.add("render-image");
             this.renderImage( content.slice(6) );
         } else if ( content.startsWith("text:") ) {
-            this.info.cardEL.classList.remove("render-latex");
-            this.info.cardEL.classList.remove("render-image");
             this.info.cardEL.classList.add("render-text");
-
             this.renderText( content.slice(5) );
         } else {
-            this.info.cardEL.classList.remove("render-text");
-            this.info.cardEL.classList.remove("render-image");
             this.info.cardEL.classList.add("render-latex");
-
             this.renderLatex(`\\displaylines{${content}}`);
         }
     }
@@ -83,6 +81,8 @@ export default class Round {
 
     renderLatex( content ) {
         const cardEL = this.info.cardEL;
+        const info = this.info;
+        const test = this.info.roundCounterEL;
 
         MathJax.texReset();
         var options = MathJax.getMetricsFor(cardEL);
@@ -93,6 +93,16 @@ export default class Round {
             //    content of the new equation.
             //
             cardEL.appendChild(node);
+
+            // 918 means width is out-of bound
+            // test.innerText = node.getBoundingClientRect().width;
+            // info.totalNumberEL.innerText = 123;
+            // info.recordEL.innerText = window.innerWidth;
+
+            if( config.mode.ADD_NEW && node.getBoundingClientRect().width > 918 ) {
+                cardEL.classList.add("too-long");
+            }
+
             MathJax.startup.document.clear();
             MathJax.startup.document.updateDocument();
         }).catch(function (err) {
