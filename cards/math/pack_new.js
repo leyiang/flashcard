@@ -1,7 +1,17 @@
 export default {
     name: "new",
     cards: [
-        ["可导的定义", "可导\\iff左右导数存在，并且相等"],
+        ["x=\\sqrt{t^2+1} \\\\ y=\\ln \\left(t+\\sqrt{t^2+1}\\right) \\\\ 求 \\left.\\frac{d^2y}{dx^2}\\right\\vert_{t=1} ", "\\frac{dy}{dx}=\\frac{\\frac{1}{\\sqrt{1+t^2}}}{\\frac{2t}{2\\sqrt{t^2+1}}}=\\frac{1}{t} \\\\ 这一步一定要注意化简 \\\\ 否则又复杂又容易错 \\\\ 最终答案是-\\sqrt{2}"],
+        ["参数方程求导", "image:parametric_function_derivative.png"],
+        ["若f(x)可导，那其反函数的导数是什么?", "若y=f(x)可导,且f'(x)\\ne0 \\\\ 其反函数x=\\phi(y)也可导 \\\\ \\phi'(y)=\\frac{1}{f'(x)} \\\\ f'(x)是切线关于x轴夹角\\alpha的\\tan \\alpha值 \\\\ \\phi'(y)是关于y轴夹角\\beta的\\tan \\beta值 \\\\ \\beta = \\frac{\\pi}{2}-\\alpha, 所以两者\\tan互为倒数"],
+        ["f(x)+f(-x)是个什么函数? \\\\ f(x)-f(-x)是什么函数?", "偶函数，不论f(x)是什么函数 \\\\ f(x)+f(-x)都是偶函数 \\\\ f(x)-f(-x)都是奇函数"],
+        ["若f(x)可导，f'(x)的奇偶性如何?", "若f(x)可导 \\\\ 且f(x)为奇函数, 那么f'(x)为偶函数 \\\\ 若f(x)为偶函数,那么f'(x)为奇函数 \\\\ 若f(x)为周期函数,那么f'(x)也为周期函数"],
+        ["image:derivative_1.png", "在x_0处的导数，一定与f(x_0)的定义相关 \\\\ 题目中以及A和B选项中,都没说明f(0)的定义 \\\\ 但是又说x=0处可导，所以A,B一定错 \\\\ C,D都说x=0处可导,所以x=0处一定连续 \\\\ 因为连续,可从题干中\\lim_{x\\to0}f(x)=0得到f(0)=0 \\\\ f'\\left(0\\right)=\\lim _{x\\to 0}\\frac{f\\left(x\\right)}{x} 存在,分母趋向0,那分子也趋向0 \\\\ 能模糊感觉到f(x)是和x同阶或高阶无穷小 \\\\ 所以感觉C是正确的,要证明的话就上下同除x \\\\ \\lim _{x\\to 0}\\frac{f\\left(x\\right)/x}{\\sqrt{\\left|x\\right|}/x}=\\lim _{x\\to 0}\\frac{f\\left(x\\right)}{x}\\frac{x}{\\sqrt{\\left|x\\right|}}=0"],
+        ["f(x)在x_0的某领域可导,能推出: \\\\ f'(x)在x_0点处连续 \\\\ \\lim_{x\\to x_0} f'(x)存在吗?", "f(x)在x_0的某领域可导 \\\\ 推不出f'(x)在x_0点处连续 \\\\ 也推不出 \\lim_{x\\to x_0} f'(x)存在"],
+        ["连续、可导、可微之间的关系", "image:relation_c_d.png"],
+        ["两条垂直线斜率的关系", "两条垂直线斜率互为负倒数"],
+        ["求曲线f(x)在点(x_0,f(x_0))的切线方程", "切线方程:y-f(x_0)=f'(x_0)(x-x_0) \\\\ 法线方程:y-f(x_0)=-\\frac{1}{f'(x_0)}(x-x_0)"],
+        ["可导的定义", "text:点A可导$\\iff$点A左右导数存在且相等 \n 在区间[a,b]上可导:在(a,b)每一点都可导 \n 且左端点处有右导数，右端点处有左导数 \n 则称函数f(x)在[a,b]上可导"],
         ["左右导数的定义", "左导数:f_-'\\left(x_0\\right)=\\lim _{\\triangle x\\to 0^-}\\frac{f\\left(x_0+\\triangle x\\right)-f\\left(x_0\\right)}{\\triangle x} \\\\ 右导数: f_+'\\left(x_0\\right)=\\lim _{\\triangle x\\to 0^+}\\frac{f\\left(x_0+\\triangle x\\right)-f\\left(x_0\\right)}{\\triangle x}"],
         ["导数的定义", "f'\\left(x_0\\right)=\\lim _{\\triangle x\\to 0}\\frac{f\\left(x_0+\\triangle x\\right)-f\\left(x_0\\right)}{\\triangle x} \\\\ f'\\left(x_0\\right)=\\lim _{\\triangle x\\to x_0}\\frac{f\\left(x\\right)-f\\left(x_0\\right)}{x-x0}"],
 
