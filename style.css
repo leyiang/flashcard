@@ -38,8 +38,8 @@ body, html {
 
 #card {
     width: 700px;
-    height: 500px;
-    display: flex;
+    /*height: 500px;*/
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0.25rem 1rem 0 var(--shadow-with-opacity);
@@ -58,17 +58,34 @@ body, html {
 
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+
+    max-height: 90%;
+    max-width: 95%;
+
+    min-width: 700px;
+    min-height: 500px;
+}
+
+#card.render-image {
+    width: 700px;
+    height: 500px;
+}
+
+.render-text svg {
+    font-size: 1.5rem;
+    border: 1px solid #000;
+    padding: .5rem;
+}
+
+#card.render-text {
+    width: unset;
+    min-width: 700px;
 }
 
 #card.render-latex {
     width: unset;
     height: unset;
-    min-width: 700px;
-    min-height: 500px;
-    max-height: 90%;
-    max-width: 95%;
 }
-
 
 #card.answer::before {
     content: 'Answer';
@@ -166,4 +183,8 @@ footer:hover {
 .radio-group input[type=radio]:checked + label {
     color: #FFF;
     background: var(--active-color);
+}
+
+.text-wrap {
+    max-width: 800px;
 }

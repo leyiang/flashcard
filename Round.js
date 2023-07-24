@@ -36,6 +36,7 @@ export default class Round {
 
     update() {
         const card = cards.data[ this.pointer ];
+        if( ! card ) return;
         const content = this.answer ? card[1] : card[0];
 
         this.answer
@@ -53,6 +54,10 @@ export default class Round {
         this.info.cardEL.classList.remove("render-text");
         this.info.cardEL.classList.remove("render-latex");
         this.info.cardEL.classList.remove("render-image");
+
+        if( config.subject === "network" ) {
+            content = "text:" + content;
+        }
 
         if( content.startsWith("image:") ) {
             // Render Image
@@ -76,7 +81,43 @@ export default class Round {
 
 
     renderText( text ) {
-        this.info.cardEL.innerText = text;
+
+        const info = this.info;
+
+        if( /\$(.*)\$/.test(text) ) {
+            text = text.replaceAll("\n", "<br>");
+
+            let list = text.match(/\$(.*?)\$/g)
+                .map(str => str.slice(1, -1))
+                .map(latex => MathJax.tex2svgPromise(latex, {}));
+
+            Promise.all(list).then((nodeList) => {
+                text = text.replaceAll(/\$(.*?)\$/g, _ => {
+                    const node = nodeList.shift();
+                    const div = document.createElement("div");
+                    div.append( node );
+                    div.appendChild( node );
+                    return div.firstElementChild.innerHTML;
+                });
+
+                const wrap = document.createElement("p");
+                wrap.classList.add("text-wrap");
+                wrap.innerHTML = text;
+                info.cardEL.appendChild( wrap );
+            });
+        } else {
+            const wrap = document.createElement("p");
+            wrap.classList.add("text-wrap");
+            wrap.innerText = text;
+            info.cardEL.appendChild( wrap );
+        }
+
+        // new Promise((resolve) => {
+        //     text.replace(/\$(.*)\$/g, (_, latex ) => {
+        //     });
+        // }).then(() => {
+        //     console.log( text );
+        // });
     }
 
     renderLatex( content ) {
@@ -99,7 +140,10 @@ export default class Round {
             // info.totalNumberEL.innerText = 123;
             // info.recordEL.innerText = window.innerWidth;
 
-            if( config.mode.ADD_NEW && node.getBoundingClientRect().width > 918 ) {
+            const svg = node.firstElementChild;
+            const width = svg.getBoundingClientRect().width;
+            if( config.mode.ADD_NEW && width > 918 ) {
+                console.log( width, svg );
                 cardEL.classList.add("too-long");
             }
 
