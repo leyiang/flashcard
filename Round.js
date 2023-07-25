@@ -56,13 +56,16 @@ export default class Round {
         this.info.cardEL.classList.remove("render-image");
 
         if( config.subject === "network" ) {
-            content = "text:" + content;
+            if( ! content.startsWith("image") ) {
+                content = "text:" + content;
+            }
         }
 
         if( content.startsWith("image:") ) {
             // Render Image
             this.info.cardEL.classList.add("render-image");
-            this.renderImage( content.slice(6) );
+            const url = config.subject + "/" + content.slice(6);
+            this.renderImage( url );
         } else if ( content.startsWith("text:") ) {
             this.info.cardEL.classList.add("render-text");
             this.renderText( content.slice(5) );
