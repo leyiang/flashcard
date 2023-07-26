@@ -93,7 +93,17 @@ body, html {
 }
 
 #card.answer::before {
-    content: 'Answer';
+    /**
+       Display CSS variables in content
+       JS can just simply set the variable
+       Won't need to care about elements
+     */
+    counter-reset:
+        total var(--total)
+        current var(--current)
+    ;
+
+    content: 'Answer(' counter(current) "/" counter(total) ")";
     position: absolute;
     top: 20px;
     left: 20px;

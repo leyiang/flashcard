@@ -14,6 +14,7 @@ export default class Round {
         this.pointer = 0;
         this.answer = false;
         this.info = info;
+        this.answerIndex = 0;
 
         this.confetti = new JSConfetti();
         this.timer = new Timer(() => {
@@ -37,11 +38,16 @@ export default class Round {
     update() {
         const card = cards.data[ this.pointer ];
         if( ! card ) return;
-        const content = this.answer ? card[1] : card[0];
+        const content = this.answer ? card[1 + this.answerIndex ] : card[0];
 
         this.answer
             ? this.info.cardEL.classList.add("answer")
             : this.info.cardEL.classList.remove("answer");
+
+        let ansNum = card.length - 1;
+        console.log( ansNum );
+        this.info.cardEL.style.setProperty("--total", ansNum);
+        this.info.cardEL.style.setProperty("--current", this.answerIndex + 1);
 
         this.info.currentNumberEL.textContent = (this.pointer + 1).toString();
         // Render LaTeX
@@ -209,8 +215,26 @@ export default class Round {
         this.update();
     }
 
+    nextAnswer() {
+        this.answerIndex ++;
+        this.update();
+    }
+
     go() {
-        this.answer ? this.next() : this.flip();
+        if( this.answer ) {
+            const card = cards.data[ this.pointer ];
+            const ansNum = card.length - 1;
+            console.log( ansNum, this.answerIndex );
+
+            if( this.answerIndex < ansNum - 1 ) {
+                this.nextAnswer();
+            } else {
+                this.answerIndex = 0;
+                this.next();
+            }
+        } else {
+            this.flip();
+        }
     }
 
 }
