@@ -162,10 +162,14 @@ export default class Round {
     }
 
     prev() {
-        this.answer = false;
-        this.pointer --;
-        if( this.pointer <= 0 ) this.pointer = cards.data.length - 1;
-        this.update();
+        if( this.answer ) {
+            this.flip();
+        } else {
+            this.answer = true;
+            this.pointer --;
+            if( this.pointer < 0 ) this.pointer = cards.data.length - 1;
+            this.update();
+        }
     }
 
     restart() {
