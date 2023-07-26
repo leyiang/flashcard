@@ -169,11 +169,18 @@ export default class Round {
 
     prev() {
         if( this.answer ) {
-            this.flip();
+            if( this.answerIndex > 0 ) {
+                this.answerIndex--;
+                this.update();
+            } else {
+                this.flip();
+            }
         } else {
             this.answer = true;
             this.pointer --;
             if( this.pointer < 0 ) this.pointer = cards.data.length - 1;
+            let card = cards.data[ this.pointer ];
+            this.answerIndex = card.length - 2;
             this.update();
         }
     }
@@ -224,7 +231,6 @@ export default class Round {
         if( this.answer ) {
             const card = cards.data[ this.pointer ];
             const ansNum = card.length - 1;
-            console.log( ansNum, this.answerIndex );
 
             if( this.answerIndex < ansNum - 1 ) {
                 this.nextAnswer();
