@@ -1,7 +1,13 @@
 import { cards } from "./cards/data.js";
 import Timer from "./Timer.js";
+import { config } from "./config.js";
 
 const timerEL = document.getElementById("roundTimer");
+
+function getRecordKey() {
+    // return cards.subject + "_" + cards.data.length + "_" + cards.keys.sort().join("_")
+    return cards.subject + cards.keys.sort().join("_")
+}
 
 export default class Round {
     constructor( info ) {
@@ -9,6 +15,7 @@ export default class Round {
         this.pointer = 0;
         this.answer = false;
         this.info = info;
+        this.answerIndex = 0;
 
         this.confetti = new JSConfetti();
         this.timer = new Timer(() => {
@@ -18,7 +25,7 @@ export default class Round {
 
     start() {
         // Store
-        const keys_local = cards.keys.sort().join("_");
+        const keys_local = getRecordKey();
         const record = localStorage.getItem(keys_local );
         this.info.recordEL.textContent = Timer.Format(record);
 
@@ -31,11 +38,17 @@ export default class Round {
 
     update() {
         const card = cards.data[ this.pointer ];
-        const content = this.answer ? card[1] : card[0];
+        if( ! card ) return;
+        const content = this.answer ? card[1 + this.answerIndex ] : card[0];
 
         this.answer
             ? this.info.cardEL.classList.add("answer")
             : this.info.cardEL.classList.remove("answer");
+
+        let ansNum = card.length - 1;
+        console.log( ansNum );
+        this.info.cardEL.style.setProperty("--total", ansNum);
+        this.info.cardEL.style.setProperty("--current", this.answerIndex + 1);
 
         this.info.currentNumberEL.textContent = (this.pointer + 1).toString();
         // Render LaTeX
@@ -44,12 +57,27 @@ export default class Round {
 
     render( content ) {
         this.info.cardEL.innerHTML = "";
+        this.info.cardEL.classList.remove("too-long");
+        this.info.cardEL.classList.remove("render-text");
+        this.info.cardEL.classList.remove("render-latex");
+        this.info.cardEL.classList.remove("render-image");
+
+        if( config.subject === "network" ) {
+            if( ! content.startsWith("image") ) {
+                content = "text:" + content;
+            }
+        }
+
         if( content.startsWith("image:") ) {
             // Render Image
-            this.renderImage( content.slice(6) );
+            this.info.cardEL.classList.add("render-image");
+            const url = config.subject + "/" + content.slice(6);
+            this.renderImage( url );
         } else if ( content.startsWith("text:") ) {
+            this.info.cardEL.classList.add("render-text");
             this.renderText( content.slice(5) );
         } else {
+            this.info.cardEL.classList.add("render-latex");
             this.renderLatex(`\\displaylines{${content}}`);
         }
     }
@@ -63,11 +91,49 @@ export default class Round {
 
 
     renderText( text ) {
-        this.info.cardEL.innerText = text;
+
+        const info = this.info;
+
+        if( /\$(.*)\$/.test(text) ) {
+            text = text.replaceAll("\n", "<br>");
+
+            let list = text.match(/\$(.*?)\$/g)
+                .map(str => str.slice(1, -1))
+                .map(latex => MathJax.tex2svgPromise(latex, {}));
+
+            Promise.all(list).then((nodeList) => {
+                text = text.replaceAll(/\$(.*?)\$/g, _ => {
+                    const node = nodeList.shift();
+                    const div = document.createElement("div");
+                    div.append( node );
+                    div.appendChild( node );
+                    return div.firstElementChild.innerHTML;
+                });
+
+                const wrap = document.createElement("p");
+                wrap.classList.add("text-wrap");
+                wrap.innerHTML = text;
+                info.cardEL.appendChild( wrap );
+            });
+        } else {
+            const wrap = document.createElement("p");
+            wrap.classList.add("text-wrap");
+            wrap.innerText = text;
+            info.cardEL.appendChild( wrap );
+        }
+
+        // new Promise((resolve) => {
+        //     text.replace(/\$(.*)\$/g, (_, latex ) => {
+        //     });
+        // }).then(() => {
+        //     console.log( text );
+        // });
     }
 
     renderLatex( content ) {
         const cardEL = this.info.cardEL;
+        const info = this.info;
+        const test = this.info.roundCounterEL;
 
         MathJax.texReset();
         var options = MathJax.getMetricsFor(cardEL);
@@ -78,6 +144,19 @@ export default class Round {
             //    content of the new equation.
             //
             cardEL.appendChild(node);
+
+            // 918 means width is out-of bound
+            // test.innerText = node.getBoundingClientRect().width;
+            // info.totalNumberEL.innerText = 123;
+            // info.recordEL.innerText = window.innerWidth;
+
+            const svg = node.firstElementChild;
+            const width = svg.getBoundingClientRect().width;
+            if( config.mode.ADD_NEW && width > 918 ) {
+                console.log( width, svg );
+                cardEL.classList.add("too-long");
+            }
+
             MathJax.startup.document.clear();
             MathJax.startup.document.updateDocument();
         }).catch(function (err) {
@@ -90,10 +169,21 @@ export default class Round {
     }
 
     prev() {
-        this.answer = false;
-        this.pointer --;
-        if( this.pointer <= 0 ) this.pointer = cards.data.length - 1;
-        this.update();
+        if( this.answer ) {
+            if( this.answerIndex > 0 ) {
+                this.answerIndex--;
+                this.update();
+            } else {
+                this.flip();
+            }
+        } else {
+            this.answer = true;
+            this.pointer --;
+            if( this.pointer < 0 ) this.pointer = cards.data.length - 1;
+            let card = cards.data[ this.pointer ];
+            this.answerIndex = card.length - 2;
+            this.update();
+        }
     }
 
     restart() {
@@ -107,7 +197,7 @@ export default class Round {
 
         // Record & Restart Timer
         let store_seconds = this.timer.seconds;
-        const timer_key = cards.keys.sort().join("_");
+        const timer_key = getRecordKey();
         const old = localStorage.getItem( timer_key ) || null;
 
         let old_num = parseInt( old );
@@ -133,8 +223,25 @@ export default class Round {
         this.update();
     }
 
+    nextAnswer() {
+        this.answerIndex ++;
+        this.update();
+    }
+
     go() {
-        this.answer ? this.next() : this.flip();
+        if( this.answer ) {
+            const card = cards.data[ this.pointer ];
+            const ansNum = card.length - 1;
+
+            if( this.answerIndex < ansNum - 1 ) {
+                this.nextAnswer();
+            } else {
+                this.answerIndex = 0;
+                this.next();
+            }
+        } else {
+            this.flip();
+        }
     }
 
 }

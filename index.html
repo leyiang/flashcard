@@ -55,9 +55,18 @@
         <div id="card"></div>
     </main>
 
-<!--    <footer>-->
-<!--        <span>hit the space key will reveal the answer. hit the space again will take you to the next card</span>-->
-<!--    </footer>-->
+    <footer>
+        <div class="radio-group">
+            <input type="radio" name="mode" tabindex="-1" id="ADD_NEW">
+            <label role="button" for="ADD_NEW">Add New</label>
+
+            <input type="radio" name="mode" tabindex="-1" id="RECITE_NEW">
+            <label role="button" for="RECITE_NEW">Recite New</label>
+
+            <input type="radio" name="mode" tabindex="-1" id="RECITE_ALL">
+            <label role="button" for="RECITE_ALL">Recite All</label>
+        </div>
+    </footer>
 
     <script src="app.js" type="module"></script>
 </body>
