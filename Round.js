@@ -5,7 +5,8 @@ import { config } from "./config.js";
 const timerEL = document.getElementById("roundTimer");
 
 function getRecordKey() {
-    return cards.subject + "_" + cards.data.length + "_" + cards.keys.sort().join("_")
+    // return cards.subject + "_" + cards.data.length + "_" + cards.keys.sort().join("_")
+    return cards.subject + cards.keys.sort().join("_")
 }
 
 export default class Round {
