@@ -2,6 +2,45 @@ export default {
     name: "new",
     cards: [
         // ["", ""],
+        ["image:mvp2.png",
+            "f(x)在(0,+\\infty)上可导, 所以在(0,+\\infty)上连续 \\\\ 第一小问用介值定理证明就好 \\\\ 第二小问要证明 f'\\left(\\xi \\right)=\\frac{1}{a}, 我们发现 \\frac{f\\left(a\\right)-f\\left(0\\right)}{a-0}=\\frac{1}{a} \\\\ 所以第二小问用中值定理就证出来了 \\\\ 除此之外，也可以改写为 f'\\left(\\xi \\right)-\\frac{1}{a}=0 \\\\ 找到一个F(x)=\\int f'\\left(\\xi \\right)-\\frac{1}{a}dx, 就可以用罗尔定理算了 ",
+            "(1).由于\\lim _{x\\to +\\infty }f\\left(x\\right)=2,则存在A>0,f(A)>1 \\\\ \\exists a\\in(0,A), 使 f(a)=1 \\\\ (2).\\frac{1}{a}=\\frac{f\\left(a\\right)-f\\left(0\\right)}{a-0}=f'(\\xi), \\xi\\in(0,a) \\\\ (2)解_2:f'\\left(\\xi \\right)-\\frac{1}{a}=0,F\\left(x\\right)=f\\left(x \\right)-\\frac{x}{a} \\\\ F(0)=F(a)=0, 则\\exists \\xi\\in(0,a),得F'(\\xi)=0 \\\\ 即f'\\left(\\xi \\right)=\\frac{1}{a}"
+        ],
+        ["image:mvp1.png", "题目给了f(x)的信息，要证明f'(x)的东西 \\\\ 所以就想到中值定理能联系起来 \\\\ 要证明f'(\\xi)>0, f'\\left(\\xi \\right)=\\frac{f\\left(b\\right)-f\\left(a\\right)}{b-a} \\\\ 中值定理的几何意义就是有一点的斜率值 \\\\ 和区间上平均斜率相同,要平均斜率大于0,f(b)就要大于f(a) \\\\ 但题干中f(a)=f(b),这该怎么办呢? \\\\ 注意f(x)是不恒为常数的函数,所以在(a,b)间必有一点c \\\\ f(c) \\ne f(a), 假设f(c)>f(a),有\\frac{f\\left(c\\right)-f\\left(a\\right)}{c-a}>0 \\\\ 假设f(c)<f(a)=f(b),有\\frac{f\\left(b\\right)-f\\left(c\\right)}{b-c}>0 \\\\ 所以(a,b)之间至少存在一点\\xi,使得f(\\xi)>0"],
+        ["证明x\\ln \\frac{1+x}{1-x}+\\cos x\\ge 1+\\frac{x^2}{2} \\\\ (-1<x<1)", "首先把右边移过来 \\\\ f(x)=x\\ln \\frac{1+x}{1-x}+\\cos x-1-\\frac{x^2}{2}\\ge 0 \\\\ f(0)=0, 所以要不等式成立，只要证f(x)单调增 \\\\ 仔细观查一下,f(x)是个偶函数 \\\\ 所以只要证明f(x)在[0,1)上单调增即可  \\\\ f'\\left(x\\right)=\\ln \\frac{1+x}{1-x}+\\frac{2x}{1-x^2}-\\sin x-x \\\\ x\\in[0,1), \\frac{1+x}{1-x}\\ge1, \\ln \\frac{1+x}{1-x}\\ge0 \\\\ 1-x^2\\le1, 放缩一下，另x=0, 分母变大，整体变小 \\\\ f'(x)\\ge 2x-\\sin x-x=x-\\sin x",
+            "当x\\in(0,\\frac{\\pi}{2})时,\\sin x < \\tan x < x \\\\ f'(x)\\ge x-\\sin x\\ge0,f(x)单调增 \\\\ 不等式证明完毕 \\\\ 要熟记常见的不等式,不等式一定要想起放缩 \\\\ 多关注函数奇偶性"
+        ],
+
+        ["x\\in(0,\\frac{\\pi}{2})时 \\\\ 请给出\\sin x, \\tan x, x的不等式关系", "x\\in(0,\\frac{\\pi}{2})时 \\\\ \\sin x < \\tan x < x的不等式关系"],
+        [
+            "不等式证明专题",
+            "证明\\frac{x}{1+x}<\\ln \\left(1+x\\right)<x,\\left(x>0\\right)",
+            "\\ln(1+x)=\\ln(1+x)+\\ln(1) \\\\ 然后用拉格朗日中值定理 \\\\ \\ln \\left(1+x\\right)+\\ln \\left(1\\right)=\\frac{1+x-1}{c}=\\frac{x}{c} \\\\ c\\in(1,1+x), 不等式就要想到放缩 \\\\ \\frac{x}{1+x}<\\frac{x}{c}<\\frac{x}{1},分母小整体大 \\\\ 原式就证明完了, 以后看到\\ln就要想到可以加\\ln1 \\\\ 然后用中值定理改写，最后放缩即可 ",
+            "证明当x>1时, \\frac{\\ln \\left(1+x\\right)}{\\ln x}>\\frac{x}{1+x}",
+            "这题的关键是对式子变化 \\\\ 原式变为：\\left(1+x\\right)\\ln \\left(1+x\\right)>x\\ln x \\\\ 这个就是函数单调增的定义,令f(x)=x\\ln x \\\\ 只要证明f(x)单调增，本题就解决了 \\\\ 简单的十字相乘，把不等式证明转换成了求导判断正负 \\\\ f'\\left(x\\right)=\\ln x+1, 题中说了x>1 \\\\ 当x>1时,f'(x)恒大于0,f(x)单调增, 证毕 \\\\ 关键：不知道怎么做时，试着变化下式子",
+        ],
+
+        ["证明方程根存在和个数，一般用什么定理", "证明方程根存在，用零点定理 \\\\ 证明方程根个数，用单调性",
+            "image:f_r_p_1.png", "令f\\left(x\\right)=x+p+q\\cos x \\\\ \\lim _{x\\to +\\infty }f\\left(x\\right)=+\\infty , \\lim _{x\\to -\\infty }f\\left(x\\right)=-\\infty \\\\ 所以存在a<b, f(a)<0, f(b)>0 \\\\ 因此存在c\\in(a,b),使得f(c)=0 \\\\ f'(x)=1-q\\sin x, 且0<q<1 \\\\ f'(x)恒大于0,即函数f(x)单调递增 \\\\ 所以f(x)最多存在一个根",
+            "恰有一个根，就是要证明存在一个根 \\\\ 还要证明只有一个根",
+            "image:f_r_p_2.png", "这道题用零点定理做不了，考虑用罗尔定理 \\\\ 令g(x)=题干的方程, f(x)=\\int g(x)dx \\\\ f'(x)=g(x), 只要证明f(a)=f(b)就可用罗尔 \\\\ f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_2x^2+a_1x \\\\ f(0)=0, f(1)=a_n+a_{n+1}+...+a_2+a_1 \\\\ 由题目可知f(1)=0,f(1)=f(0) \\\\ 则\\exists c\\in(0,1), 使f'(x)=0, 证毕",
+            "image:f_r_p_3.png",
+            "题目要证明x^5-5x+k=0有三个实根 \\\\ 原式可以变成:k=5x-x^5,令f(x)=5x-x^5 \\\\ 它的几何意义是: f(x)与y=k相交了三次 \\\\ f'(x)=5-5x^4=5(1+x^2)(1-x^2) \\\\ x>1时，导数是负的,0<x<1时，导数是正的 \\\\ 即x>1时f(x)\\nearrow，0<x<1时f(x)\\searrow \\\\ 因为f'(x)是奇函数，f(x)<0的情况正好相反 \\\\ 即x>-1时f(x)\\searrow, 0<x<-1时f(x) \\nearrow \\\\ f(1)=4, f(-1)=-4, 可以把图画出来",
+            "image:frp3_graph.png",
+            "由图可见，y=k想和f(x)相交三次 \\\\ k\\in(-4,4) \\\\ k>4时只会相交一次 \\\\ k=4时相交两次"
+       ],
+        ["y=\\frac{1}{x}+\\ln \\left(1+e^x\\right)有斜渐近线吗?", "\\frac{1}{x}+\\ln \\left(1+e^x\\right) \\\\ =\\frac{1}{x}+\\ln \\left(e^x\\left(e^{-x}+1\\right)\\right) \\\\ =x+[\\frac{1}{x}+\\ln \\left(e^{-x}+1\\right)] \\\\ 其中方括号里\\to0, 符合ax+b+g(x) \\\\ 且x\\to\\infty,g(x)\\to0的形式 \\\\ 所以y=x是f(x)的斜渐近线"],
+        ["\\lim _{x\\to +\\infty }\\frac{1}{x}+\\ln \\left(1+e^x\\right)-x=?",
+            "\\frac{1}{x}是0,主要看后面两个 \\\\ \\infty-\\infty,按理说要通分，但该怎么做呢? \\\\ 我们发现x=\\ln \\left(e^x\\right),原式可以写成：\\\\ \\lim _{x\\to +\\infty }\\ln \\left(1+e^x\\right)-\\ln \\left(e^x\\right) \\\\ = \\lim _{x\\to +\\infty }\\ln \\left(\\frac{1+e^x}{e^x}\\right) =\\ln(1)=0 \\\\ 重点是：\\ln(..)-..可以把后面写成\\ln的形式",
+            "除此之外也可以改\\ln,提一个e^x出来 \\\\ \\lim _{x\\to +\\infty }\\ln \\left(e^x\\left(\\frac{1}{e^x}+1\\right)\\right)-x \\\\ =\\lim _{x\\to +\\infty }x+\\ln \\left(1\\right)-x=0 "
+        ],
+        [
+            "水平渐近线", "\\lim _{x\\to \\infty }f\\left(x\\right)=A \\\\ y=A就是一个水平渐近线",
+            "垂直渐近线", "\\lim _{x\\to x_0 }f\\left(x\\right)=\\infty \\\\ x=x_0就是一个垂直渐近线",
+            "斜渐近线的定义", "\\lim _{x\\to \\infty }\\frac{f\\left(x\\right)}{x}=a \\\\ \\lim _{x\\to \\infty }\\left(f\\left(x\\right)-ax\\right)=b \\\\ 那么y=ax+b是y=f(x)的斜渐近线",
+            "一个求斜渐近线更快的方法", "如果f(x)能写成 ax+b+g(x)形式 \\\\ 且x\\to\\infty,g(x)\\to0 \\\\ 那么y=ax+b就是f(x)的一个斜渐近线",
+        ],
+        ["设f\\left(x\\right)=\\left|x\\left(1-x\\right)\\right| \\\\ 现在想知道0点附近的情况，写出一、二阶导", "函数有绝对值，不好直接求导数 \\\\ 所以要先去绝对值,因为只关心0点小邻域的情况 \\\\ 可以把x看成很小的正数和很小的负数 \\\\ f(x)=-x(1-x), x<0 \\\\ f(x)=x(1-x), x\\ge0 \\\\ 0点左右两边的导数直接求即可 \\\\ 但是0点的导数是否存在还要单独讨论 \\\\ 本题不需要，所以不求"],
         ["导数的定义",
             "f'\\left(x_0\\right)=\\lim _{\\triangle x\\to 0}\\frac{f\\left(x_0+\\triangle x\\right)-f\\left(x_0\\right)}{\\triangle x} \\\\ f'\\left(x_0\\right)=\\lim _{\\triangle x\\to x_0}\\frac{f\\left(x\\right)-f\\left(x_0\\right)}{x-x0}",
             "左右导数的定义",
@@ -119,7 +158,6 @@ export default {
         ],
         ["设f(x)在(-\\infty,+\\infty)连续 \\\\ 其导函数图形如图所示 \\\\ (0,0)是一个极值点吗? \\\\ *注意！是导函数的图像，不函数的图像*", "image:extereme_value_problem_1.png", "在图中看到(0,0)的导数值不存在 \\\\ 但题干中有说在(-\\infty,+\\infty)有定义 \\\\ 所以(0,0)存在极值 \\\\ 导数从正到负，所以是个极大值"],
         ["曲率的定义", "曲率K=\\frac{\\left|y''\\right|}{\\left(1+\\left(y'\\right)^2\\right)^{\\frac{3}{2}}} \\\\ 曲率半径R=\\frac{1}{K}"],
-        ["斜渐近线的定义", "\\lim _{x\\to \\infty }\\frac{f\\left(x\\right)}{x}=a \\\\ \\lim _{x\\to \\infty }\\left(f\\left(x\\right)-ax\\right)=b \\\\ 那么y=ax+b是y=f(x)的斜渐近线 "],
         ["设(x_0, f(x_0))是拐点 \\\\ 能说x_0是函数的拐点吗?", "不能，拐点要把x,y都写上"],
         ["函数凹凸性的不等式定义", "凹：f\\left(\\frac{x_1+x_2}{2}\\right)<\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2} \\\\ 凸：f\\left(\\frac{x_1+x_2}{2}\\right)>\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2}", "image:concave_defination.png"],
         ["什么是驻点?", "导数为0的点"],

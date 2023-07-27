@@ -105,7 +105,7 @@ body, html {
 
     content: 'Answer(' counter(current) "/" counter(total) ")";
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 20px;
     font-weight: 900;
     font-size: 24px;
