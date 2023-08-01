@@ -2,6 +2,7 @@ export default {
     name: "new",
     cards: [
         // ["", ""],
+        ["image:q1.png", "image:a1.png"],
         ["范德蒙德行列式(范氏)", "image:vandermonde.png", "\\prod _{1\\le i\\le j\\le n}^{ }\\left(x_j-x_i\\right) \\\\ 代表右减左的联乘 \\\\ 假设第二行为 |A \\ B \\ C| \\\\ 公式=(C-B)(C-A)(B-A)"],
         [
             "\\left | \\begin{matrix} A&O \\\\ O&B \\end{matrix} \\right | \\\\" +
