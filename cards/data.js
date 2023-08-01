@@ -3,6 +3,8 @@ import { import_map } from "./import_map.js";
 
 let card_packs = import_map[ config.subject ];
 
+// config.mode.RECITE_THOUGHT = true;
+
 if( config.mode.ADD_NEW ) {
     config.random = false;
     config.new = true;
@@ -12,13 +14,22 @@ if( config.mode.ADD_NEW ) {
 } else if( config.mode.RECITE_ALL ) {
     config.random = true;
     config.new = false;
+} else if( config.mode.RECITE_THOUGHT ) {
+    config.random = true;
+    config.new = false;
 }
 
 if( config.new ) {
     card_packs = card_packs.filter(pack => pack.name === "new" );
+} else if ( config.mode.RECITE_THOUGHT ) {
+    card_packs = card_packs.filter(pack => pack.name !== "new" );
+    card_packs = card_packs.filter(pack => pack.name === "thought");
 } else {
     card_packs = card_packs.filter(pack => pack.name !== "new" );
+    card_packs = card_packs.filter(pack => pack.name !== "thought" );
 }
+
+// config.random = false;
 
 const cards = {
     subject: config.subject,

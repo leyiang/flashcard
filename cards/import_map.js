@@ -3,6 +3,7 @@
  * Do not modify this file
  * Re-run the re-map script instead
  */
+import linear_pack_new from "./linear/pack_new.js"
 import math_pack_arc from "./math/pack_arc.js"
 import math_pack_basic from "./math/pack_basic.js"
 import math_pack_calc from "./math/pack_calc.js"
@@ -18,6 +19,9 @@ import network_pack_basic from "./network/pack_basic.js"
 import network_pack_new from "./network/pack_new.js"
 
 const import_map = {
+    linear: [
+        linear_pack_new
+    ],
     math: [
         math_pack_arc,
         math_pack_basic,
