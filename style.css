@@ -5,9 +5,13 @@
 }
 
 :root {
-    --shadow-with-opacity: #2e385614;
     font-size: 16px;
     font-family: universe, serif;
+
+    --shadow-with-opacity: #2e385614;
+    --border-color: #a2a2c5;
+    --hover-color: #f6f0ff;
+    --active-color: #8484ff;
 }
 
 
@@ -133,6 +137,7 @@ header {
 
 .info-wrap {
     margin: 0;
+    line-height: 1;
 }
 
 .info {
@@ -168,10 +173,6 @@ footer:hover {
 }
 
 .radio-group {
-    --border-color: #000;
-    --hover-color: #bfdbfe;
-    --active-color: #3b82f6;
-
     display: flex;
     border: 1px solid var(--border-color);
     border-radius: 15px;
@@ -202,4 +203,18 @@ footer:hover {
 
 .text-wrap {
     max-width: 800px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.icon-btn:hover{
+    background: var(--hover-color);
+    border-color: var(--active-color);
 }

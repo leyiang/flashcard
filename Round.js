@@ -9,6 +9,12 @@ function getRecordKey() {
     return cards.subject + cards.keys.sort().join("_")
 }
 
+document.querySelector(".remove-record").addEventListener("click", () => {
+    const key = getRecordKey();
+    localStorage.removeItem( key );
+    document.getElementById("recordTimer").textContent = Timer.Format(0);
+});
+
 export default class Round {
     constructor( info ) {
         this.round = 0;
@@ -45,7 +51,7 @@ export default class Round {
             ? this.info.cardEL.classList.add("answer")
             : this.info.cardEL.classList.remove("answer");
 
-        let ansNum = card.length - 1;
+        let ansNum = Math.max(0, Math.max(0, card.length - 1));
         console.log( ansNum );
         this.info.cardEL.style.setProperty("--total", ansNum);
         this.info.cardEL.style.setProperty("--current", this.answerIndex + 1);
@@ -231,7 +237,7 @@ export default class Round {
     go() {
         if( this.answer ) {
             const card = cards.data[ this.pointer ];
-            const ansNum = card.length - 1;
+            const ansNum = Math.max(0, card.length - 1);
 
             if( this.answerIndex < ansNum - 1 ) {
                 this.nextAnswer();
