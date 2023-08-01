@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=800">
+    <title>MathQuill: Easily type math into your webapp</title>
+
+    <script src="jq.js"></script>
+    <script src="mathquill.js"></script>
+    <link rel="stylesheet" href="mathquill.css">
+
+    <style>
+        #math-field {
+            min-width: 500px;
+            font-size: 36px;
+            min-height: 50px;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        main {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @font-face {
+            font-family: "Symbola";
+            src: url("./Symbola.woff");
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <div id="example">
+        <span id="math-field"></span>
+
+        <script>
+            var mathFieldSpan = document.getElementById('math-field');
+            // var latexSpan = document.getElementById('latex');
+
+            var MQ = MathQuill.getInterface(2); // for backcompat
+            var mathField = MQ.MathField(mathFieldSpan, {
+                spaceBehavesLikeTab: true, // configurable
+                handlers: {
+                    // edit: function() { // useful event handlers
+                    //     latexSpan.textContent = mathField.latex(); // simple API
+                    // }
+                }
+            });
+        </script>
+    </div>
+
+</main>
+</body>
+</html>
