@@ -47,4 +47,17 @@ if( config.random ) {
     shuffleArray( cards.data );
 }
 
-export { cards };
+const subjects = Object.keys( import_map );
+
+subjects.forEach(subject => {
+    const current = subject === config.subject;
+    $(".selectpicker").append(`<option ${current ? 'selected' : '' }>${ subject }</option>`);
+});
+
+$(".selectpicker").on("change", function(e){
+    // this.value
+    localStorage.setItem("subject", this.value);
+    location.reload();
+});
+
+export { cards, subjects };

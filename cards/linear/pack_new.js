@@ -2,6 +2,11 @@ export default {
     name: "new",
     cards: [
         // ["", ""],
+        ["image:q2.png", "ans=\\left[a+\\left(n-1\\right)b\\right]\\left(a-b\\right)^{\\left(n-1\\right)} \\\\ 这里是行和相等的类型 \\\\ 思路是把每一列都加到第1列上 \\\\ 这样第一列都是a+(n-1)b \\\\ 提出来,第一列只剩1",
+            "image:a2_1.png",
+            "再把第一行的(-1)倍加到其它行 \\\\ 这样就构成了一个左下三角行列式 \\\\ 答案就是主对角联乘 \\\\ ans=\\left[a+\\left(n-1\\right)b\\right]\\left(a-b\\right)^{\\left(n-1\\right)}",
+            "image:a2_2.png"
+        ],
         ["image:q1.png", "image:a1.png"],
         ["范德蒙德行列式(范氏)", "image:vandermonde.png", "\\prod _{1\\le i\\le j\\le n}^{ }\\left(x_j-x_i\\right) \\\\ 代表右减左的联乘 \\\\ 假设第二行为 |A \\ B \\ C| \\\\ 公式=(C-B)(C-A)(B-A)"],
         [
