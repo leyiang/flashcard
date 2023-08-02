@@ -40,5 +40,6 @@ document.querySelectorAll(".radio-group input").forEach( radio => {
 
     radio.addEventListener("input", e => {
         localStorage.setItem("mode", radio.id );
+        location.reload();
     });
 });

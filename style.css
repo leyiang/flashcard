@@ -28,6 +28,7 @@ body, html {
     height: 100%;
     margin: 0;
 
+    font-family: universe, serif;
     touch-action: manipulation;
 }
 
@@ -186,6 +187,7 @@ footer:hover {
     user-select: none;
     font-family: Courier New, serif;
     vertical-align: center;
+    margin: 0;
 }
 
 .radio-group label:not(:last-child) {
@@ -217,4 +219,12 @@ footer:hover {
 .icon-btn:hover{
     background: var(--hover-color);
     border-color: var(--active-color);
+}
+
+.bootstrap-select a {
+    outline: none!important;
+}
+.bootstrap-select button {
+    outline: none!important;
+    background: #FFF!important;
 }

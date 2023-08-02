@@ -8,6 +8,13 @@
     <title>FlashCard</title>
     <script src="./libs/utils.js"></script>
 
+    <link href="./libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./libs/bootstrap/bootstrap-select.min.css" />
+
+    <script src="./libs/jquery.js"></script>
+    <script src="./libs/bootstrap/bootstrap.min.js"></script>
+    <script src="./libs/bootstrap/bootstrap-select.min.js"></script>
+
     <link rel="stylesheet" href="./style.css">
 
     <!--  MathJax: For Math Equation Render -->
@@ -30,15 +37,19 @@
         </p>
 
         <p class="round info-wrap">
-                    <span class="info card-number-info">
-                        <span class="current-card-number">0</span>
-                        /
-                        <span class="total-card-number">0</span>
-                    </span>
+            <span class="info card-number-info">
+                <span class="current-card-number">0</span>
+                /
+                <span class="total-card-number">0</span>
+            </span>
+
             <span>Cards</span>
         </p>
 
         <div style="margin-left: auto; display: flex; gap: 30px; align-items: flex-end">
+            <select class="selectpicker" data-show-subtext="true" data-live-search="true">
+            </select>
+
             <p class="info-wrap">
                 <span class="info card-number-info" id="roundTimer">00:00</span>
                 <span>Timer</span>
