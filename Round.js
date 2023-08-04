@@ -68,7 +68,7 @@ export default class Round {
         this.info.cardEL.classList.remove("render-latex");
         this.info.cardEL.classList.remove("render-image");
 
-        if( ["network", "algo"].includes(config.subject) ) {
+        if( ["network", "algo", "phl"].includes(config.subject) ) {
             if( ! content.startsWith("image") ) {
                 content = "text:" + content;
             }
