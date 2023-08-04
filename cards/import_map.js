@@ -18,6 +18,7 @@ import math_pack_thought from "./math/pack_thought.js"
 import math_pack_trig from "./math/pack_trig.js"
 import network_pack_basic from "./network/pack_basic.js"
 import network_pack_new from "./network/pack_new.js"
+import phl_pack_new from "./phl/pack_new.js"
 
 const import_map = {
     algo: [
@@ -42,6 +43,9 @@ const import_map = {
     network: [
         network_pack_basic,
         network_pack_new
+    ],
+    phl: [
+        phl_pack_new
     ]
 }
 export { import_map }

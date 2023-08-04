@@ -12,7 +12,6 @@ export default {
         ["\\arcsin x的泰勒展开","\\arcsin x=x+\\frac{1}{6}x^3+o\\left(x^3\\right)"],
         ["\\arctan x的泰勒展开","\\arctan x=x-\\frac{1}{3}x^3+o\\left(x^3\\right)"],
         ["\\tan x的泰勒展开","\\tan x=x+\\frac{1}{3}x^3+o\\left(x^3\\right)"],
-        ["\\left(1+x\\right)^a的泰勒展开","\\left(1+x\\right)^a=1+ax+\\frac{a\\left(a-1\\right)}{2!}x^2+.. \\\\ ..+\\frac{a\\left(a-1\\right)...\\left(a-n+1\\right)}{n!}x^n+o\\left(x^n\\right)"],
         ["\\ln(1+x)的泰勒展开","\\ln(1+x)=x-\\frac{x^2}{2}+...+\\frac{\\left(-1\\right)^{n-1}x^n}{n}+o(x^n) \\\\ 对所有x\\in(-1,1]都成立"],
         ["\\cos(x)的泰勒展开","\\cos(x)=1-\\frac{x^2}{2!}+...+\\frac{\\left(-1\\right)^nx^{2n}}{2n!}+o\\left(x^{2n}\\right) \\\\ 对所有实数x都成立"],
         ["\\sin(x)的泰勒展开","\\sin(x)=x-\\frac{x^3}{3!}+...+\\frac{\\left(-1\\right)^nx^{2n+1}}{\\left(2n+1\\right)!}+o(x^{2n+1}) \\\\ 对所有实数x都成立"],

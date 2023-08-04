@@ -2,6 +2,7 @@ export default {
     name: "new",
     cards: [
         // ["", ""],
+        ["\\left(1+x\\right)^a的泰勒展开","\\left(1+x\\right)^a=1+ax+\\frac{a\\left(a-1\\right)}{2!}x^2+.. \\\\ ..+\\frac{a\\left(a-1\\right)...\\left(a-n+1\\right)}{n!}x^n+o\\left(x^n\\right)"],
         ["t=\\tan \\frac{x}{2} \\\\ dx=? \\sin x=? \\cos x=?", "x = 2\\arctan t \\\\ dx=\\frac{2}{1+t^2}dt, \\sin x = \\frac{2t}{1+t^2} \\\\ \\cos x=\\cos x=\\frac{1-t^2}{1+t^2}", "\\sin x=\\frac{2\\sin \\frac{x}{2}\\cos \\frac{x}{2}}{\\sin ^2\\frac{x}{2}+\\cos ^2\\frac{x}{2}} \\\\ 上下同除\\cos\\frac{x}{2} \\\\ \\sin x=\\frac{2\\tan \\frac{x}{2}}{1+\\tan ^2\\frac{x}{2}}=\\frac{2t}{1+t^2}"],
         ["常见的积不出函数", "\\int e^{x^2}dx,\\int \\frac{\\sin x}{x}dx,\\int \\frac{\\cos x}{x}dx \\\\ 碰到这些函数要知道，它们的原函数不是初等函数"],
         ["\\int \\frac{\\ln x}{\\left(1-x\\right)^2}dx=?", "\\int \\frac{\\ln x}{\\left(1-x\\right)^2}dx=\\frac{\\ln x}{1-x}-\\int \\frac{dx}{x\\left(1-x\\right)} \\\\ 右边的积分+x-x分项 =\\int \\frac{1-x+x}{x\\left(1-x\\right)}dx \\\\ =\\int xdx+\\int \\frac{1}{1-x}dx \\\\ ans=\\frac{\\ln x}{1-x}+\\ln \\frac{\\left|1-x\\right|}{x}+C "],
