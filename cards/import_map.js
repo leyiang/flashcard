@@ -5,6 +5,7 @@
  */
 import algo_pack_new from "./algo/pack_new.js"
 import linear_pack_new from "./linear/pack_new.js"
+import linear_pack_thought from "./linear/pack_thought.js"
 import math_pack_arc from "./math/pack_arc.js"
 import math_pack_basic from "./math/pack_basic.js"
 import math_pack_calc from "./math/pack_calc.js"
@@ -25,7 +26,8 @@ const import_map = {
         algo_pack_new
     ],
     linear: [
-        linear_pack_new
+        linear_pack_new,
+        linear_pack_thought
     ],
     math: [
         math_pack_arc,

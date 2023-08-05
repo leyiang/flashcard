@@ -2,20 +2,13 @@ const config = {
     random: true,
     newMode: false,
     subject: "network",
-    mode: {
-        ADD_NEW: false,
-        RECITE_NEW: false,
-        RECITE_ALL: false,
-    },
+
+    mode: "ADD_NEW",
 }
 
-const mode = localStorage.getItem("mode");
-config.mode[ mode ] = true;
+config.mode = localStorage.getItem("mode") || "ADD_NEW";
 
 const subject = localStorage.getItem("subject");
 if( subject ) config.subject = subject;
-
-config.random = false;
-config.newMode = true
 
 export { config };

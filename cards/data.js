@@ -3,25 +3,27 @@ import { import_map } from "./import_map.js";
 
 let card_packs = import_map[ config.subject ];
 
-// config.mode.RECITE_THOUGHT = true;
+config.mode = "RECITE_THOUGHT";
 
-if( config.mode.ADD_NEW ) {
+if( config.mode === "ADD_NEW" ) {
     config.random = false;
     config.new = true;
-} else if( config.mode.RECITE_NEW ) {
+} else if( config.mode === "RECITE_NEW" ) {
     config.random = true;
     config.new = true;
-} else if( config.mode.RECITE_ALL ) {
+} else if( config.mode === "RECITE_ALL" ) {
     config.random = true;
     config.new = false;
-} else if( config.mode.RECITE_THOUGHT ) {
+} else if( config.mode === "RECITE_THOUGHT" ) {
     config.random = true;
     config.new = false;
 }
 
 if( config.new ) {
     card_packs = card_packs.filter(pack => pack.name === "new" );
-} else if ( config.mode.RECITE_THOUGHT ) {
+} else if ( config.mode === "RECITE_THOUGHT" ) {
+
+    console.log( card_packs );
     card_packs = card_packs.filter(pack => pack.name !== "new" );
     card_packs = card_packs.filter(pack => pack.name === "thought");
 } else {
