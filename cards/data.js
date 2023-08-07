@@ -3,7 +3,7 @@ import { import_map } from "./import_map.js";
 
 let card_packs = import_map[ config.subject ];
 
-config.mode = "RECITE_THOUGHT";
+// config.mode = "RECITE_THOUGHT";
 
 if( config.mode === "ADD_NEW" ) {
     config.random = false;

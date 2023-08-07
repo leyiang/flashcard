@@ -18,8 +18,8 @@ export default {
         ["f''(c)=0 意味着拐点吗?", "c不一定是拐点"],
         ["零点定理", "若f(x)在[a,b]上连续，f(a)与f(b)异号 \\\\ 即f(a)f(b)<0, 那在(a,b)之间必有一点c \\\\ 使得f(c)=0"],
         ["连续的定义？", "\\lim_{x \\to a}{f(x)}=f(a) \\\\ f在点a处连续 "],
-        ["极值定理", "image:extreme_value_theorem.png"],
-        ["罗尔定理", "image:rolles_theorem.png"],
-        ["中值定理", "image:mean_value_theorem.png"],
+        ["极值定理", "image:math_extreme_value_theorem.png"],
+        ["罗尔定理", "image:math_rolles_theorem.png"],
+        ["中值定理", "image:math_mean_value_theorem.png"],
     ]
 }

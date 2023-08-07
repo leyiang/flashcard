@@ -20,7 +20,7 @@ export default {
             "f(x)在什么条件下，一定没有函数?", "若f(x)在区间I上有第一类间断点 \\\\ 则f(x)在I上没有原函数"
         ],
 
-        ["若f(x)可导，那其反函数的导数是什么?", "若y=f(x)可导,且f'(x)\\ne0 \\\\ 其反函数x=\\phi(y)也可导 \\\\ \\phi'(y)=\\frac{1}{f'(x)} \\\\ f'(x)是切线关于x轴夹角\\alpha的\\tan \\alpha值 \\\\ \\phi'(y)是关于y轴夹角\\beta的\\tan \\beta值 \\\\ \\beta = \\frac{\\pi}{2}-\\alpha, 所以两者\\tan互为倒数", "image:inverse_derivative_explain.png"],
+        ["若f(x)可导，那其反函数的导数是什么?", "若y=f(x)可导,且f'(x)\\ne0 \\\\ 其反函数x=\\phi(y)也可导 \\\\ \\phi'(y)=\\frac{1}{f'(x)} \\\\ f'(x)是切线关于x轴夹角\\alpha的\\tan \\alpha值 \\\\ \\phi'(y)是关于y轴夹角\\beta的\\tan \\beta值 \\\\ \\beta = \\frac{\\pi}{2}-\\alpha, 所以两者\\tan互为倒数", "image:math_inverse_derivative_explain.png"],
         ["皮亚诺余项", "R_n(x)=o(x-a)^n, (x\\to a)"],
         ["f(x)+f(-x)是个什么函数? \\\\ f(x)-f(-x)是什么函数?", "f(x)+f(-x)大概率是偶函数 \\\\ f(x)-f(-x)大概率是奇函数 \\\\ 要自己验证一下"],
         [
@@ -40,8 +40,8 @@ export default {
             "\\lim _{n\\to \\infty }n^{\\frac{1}{n}}=\\lim _{n\\to \\infty }\\sqrt[n]{n}=?", "\\lim _{n\\to \\infty }n^{\\frac{1}{n}}=\\lim _{n\\to \\infty }\\sqrt[n]{n}=1"
         ],
 
-        ["image:infinite_small_2_ques.png", "image:infinite_small_2_ans.png",
-            "image:infinite_small_1_ques.png", "image:infinite_small_1_ans.png"
+        ["image:math_infinite_small_2_ques.png", "image:math_infinite_small_2_ans.png",
+            "image:math_infinite_small_1_ques.png", "image:math_infinite_small_1_ans.png"
         ],
 
         ["证明方程根存在和个数，一般用什么定理", "证明方程根存在,用零点定理、罗尔定理 \\\\ 证明方程根个数，用单调性"],
@@ -119,15 +119,15 @@ export default {
 
         ["曲率的定义", "曲率K=\\frac{\\left|y''\\right|}{\\left(1+\\left(y'\\right)^2\\right)^{\\frac{3}{2}}} \\\\ 曲率半径R=\\frac{1}{K}"],
         ["设(x_0, f(x_0))是拐点 \\\\ 能说x_0是函数的拐点吗?", "不能，拐点要把x,y都写上"],
-        ["函数凹凸性的不等式定义", "凹：f\\left(\\frac{x_1+x_2}{2}\\right)<\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2} \\\\ 凸：f\\left(\\frac{x_1+x_2}{2}\\right)>\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2}", "image:concave_defination.png"],
+        ["函数凹凸性的不等式定义", "凹：f\\left(\\frac{x_1+x_2}{2}\\right)<\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2} \\\\ 凸：f\\left(\\frac{x_1+x_2}{2}\\right)>\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2}", "image:math_concave_defination.png"],
         ["什么是驻点?", "导数为0的点"],
         ["什么时候用泰勒公式?\\\\用皮亚诺余项还是拉格朗日余项?\\\\在哪一点上用?", "text:1.只要题目中出现n阶导的形式,要想到泰勒 \n 2.研究局部(极限,极值)用皮亚诺 \n 3.研究整体(最值,不等式)用拉格朗日 \n 4.哪一点提供的信息多,就在哪点用"],
         ["柯西中值定理", "y=f(t), x=F(t) \\\\ f(x),F(x)在[a,b]上连续 \\\\ f(x)和F(x)在(a,b)可导 \\\\ 且F(x)\\ne0,则\\exists c\\in (a,b) \\\\ \\frac{f(b)-f(a)}{F(b)-F(a)}=\\frac{f'(c)}{F'(c)}"],
         ["设f\\left(x\\right)=\\phi \\left(x\\right)\\left|x-a\\right| \\\\ 其中\\phi(x)在x=a处连续 \\\\ 则f(x)在x=a处可导的充要条件是?", "\\phi(a)=0"],
-        ["参数方程求导", "image:parametric_function_derivative.png"],
+        ["参数方程求导", "image:math_parametric_function_derivative.png"],
         ["若f(x)可导，f'(x)的奇偶性如何?", "若f(x)可导 \\\\ 且f(x)为奇函数, 那么f'(x)为偶函数 \\\\ 若f(x)为偶函数,那么f'(x)为奇函数 \\\\ 若f(x)为周期函数,那么f'(x)也为周期函数"],
         ["f(x)在x_0的某邻域可导,能推出: \\\\ f'(x)在x_0点处连续 \\\\ \\lim_{x\\to x_0} f'(x)存在吗?", "f(x)在x_0的某领域可导 \\\\ 推不出f'(x)在x_0点处连续 \\\\ 也推不出 \\lim_{x\\to x_0} f'(x)存在"],
-        ["连续、可导、可微之间的关系", "image:relation_c_d.png"],
+        ["连续、可导、可微之间的关系", "image:math_relation_c_d.png"],
         ["两条垂直线斜率的关系", "两条垂直线斜率互为负倒数"],
         ["求曲线f(x)在点(x_0,f(x_0))的切线方程", "切线方程:y-f(x_0)=f'(x_0)(x-x_0) \\\\ 法线方程:y-f(x_0)=-\\frac{1}{f'(x_0)}(x-x_0)"],
 

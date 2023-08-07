@@ -9,7 +9,7 @@ export default {
         ["\\int b^xdx=?", "\\frac{b^x}{ln(b)}+C"],
         ["\\int x^adx=?(a \\neq 1)", "\\frac{x^{a+1}}{a+1}+C"],
         ["\\int \\frac{1}{t^2+a^2}dt=?", "\\frac{1}{a} tan^{-1}(\\frac{t}{a}) + C"],
-        ["积分中值定理", "image:integral_mean_value_theorem.png"],
+        ["积分中值定理", "image:math_integral_mean_value_theorem.png"],
         ["\\frac{...}{(...)(x+a)^3},怎么拆", "... + \\frac{A}{(x+a)^3} + \\frac{B}{(x+a)^2} + \\frac{C}{(x+a)}"],
         ["\\frac{...}{(...)(x^2+ax+b)},怎么拆", "... + \\frac{Ax+B}{x^2+ax+b}"],
         ["\\frac{...}{(...)(x+a)^2},怎么拆", "... + \\frac{A}{(x+a)^2} + \\frac{B}{(x+a)}"],

@@ -1,12 +1,12 @@
 export default {
     name: "arc",
     cards: [
-        ["\\text{graph of: } \\csc^{-1}(x)", "image:arccsc_graph.png"],
-        ["\\text{graph of: } \\cot^{-1}(x)", "image:arccot_graph.png"],
-        ["\\text{graph of: } \\tan^{-1}(x)", "image:arctan_graph.png"],
-        ["\\text{graph of: } \\cos^{-1}(x)", "image:arccos_graph.png"],
-        ["\\text{graph of: } \\sin^{-1}(x)", "image:arcsin_graph.png"],
-        ["\\text{graph of: } \\sec^{-1}(x)", "image:arcsec_graph.png"],
+        ["\\text{graph of: } \\csc^{-1}(x)", "image:math_arccsc_graph.png"],
+        ["\\text{graph of: } \\cot^{-1}(x)", "image:math_arccot_graph.png"],
+        ["\\text{graph of: } \\tan^{-1}(x)", "image:math_arctan_graph.png"],
+        ["\\text{graph of: } \\cos^{-1}(x)", "image:math_arccos_graph.png"],
+        ["\\text{graph of: } \\sin^{-1}(x)", "image:math_arcsin_graph.png"],
+        ["\\text{graph of: } \\sec^{-1}(x)", "image:math_arcsec_graph.png"],
         ["\\tan^{-1}(x)的奇偶性和定义域", "奇函数,R, (-\\frac{\\pi}{2}, \\frac{\\pi}{2})"],
         ["\\cos^{-1}(x)的奇偶性和定义域", "无奇偶,[-1, 1], [0, \\pi]"],
         ["\\sin^{-1}(x)的奇偶性和定义域", "奇函数, [-1, 1], [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]"],
