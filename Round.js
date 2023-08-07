@@ -77,7 +77,7 @@ export default class Round {
         if( content.startsWith("image:") ) {
             // Render Image
             this.info.cardEL.classList.add("render-image");
-            const url = config.subject + "/" + content.slice(6);
+            const url = content.slice(6);
             this.renderImage( url );
         } else if ( content.startsWith("text:") ) {
             this.info.cardEL.classList.add("render-text");
