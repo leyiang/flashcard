@@ -9,6 +9,15 @@ function getRecordKey() {
     return cards.subject + cards.keys.sort().join("_")
 }
 
+function getRoundKey() {
+    return getDateString() + "_" + config.subject + "_round";
+}
+
+function getDateString() {
+    const date = new Date();
+    return date.getFullYear() + "-" + (date.getMonth()+1).toString().padStart(2, "0") + "-" + (date.getDate()+1).toString().padStart(2, "0");
+}
+
 document.querySelector(".remove-record").addEventListener("click", () => {
     const key = getRecordKey();
     localStorage.removeItem( key );
@@ -17,7 +26,9 @@ document.querySelector(".remove-record").addEventListener("click", () => {
 
 export default class Round {
     constructor( info ) {
-        this.round = 0;
+        const todayRound = localStorage.getItem(getRoundKey()) || 0;
+        this.round = isNaN(todayRound) ? 0 : parseInt(todayRound);
+        info.roundCounterEL.textContent = this.round;
         this.pointer = 0;
         this.answer = false;
         this.info = info;
@@ -213,8 +224,12 @@ export default class Round {
         localStorage.setItem( timer_key, store_seconds.toString() );
         this.info.recordEL.textContent = Timer.Format( store_seconds );
 
+        console.log( this.round );
         this.timer.restart();
         this.info.roundCounterEL.textContent = this.round;
+        // Store today-round
+        const round_key = getRoundKey();
+        localStorage.setItem( round_key, this.round );
     }
 
     flip() {
