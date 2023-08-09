@@ -10,7 +10,7 @@ function getRecordKey() {
 }
 
 function getRoundKey() {
-    return getDateString() + "_" + config.subject + "_round";
+    return getDateString() + "_" + config.subject + "_" + config.mode + "_round";
 }
 
 function getDateString() {
