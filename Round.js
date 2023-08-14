@@ -10,7 +10,7 @@ function getRecordKey() {
 }
 
 function getRoundKey() {
-    return getDateString() + "_" + config.subject + "_" + config.mode + "_round";
+    return getDateString() + "_" + config.subject + "_" + config.cat + "_" + config.mode + "_round";
 }
 
 function getDateString() {
@@ -63,7 +63,6 @@ export default class Round {
             : this.info.cardEL.classList.remove("answer");
 
         let ansNum = Math.max(0, Math.max(0, card.length - 1));
-        console.log( ansNum );
         this.info.cardEL.style.setProperty("--total", ansNum);
         this.info.cardEL.style.setProperty("--current", this.answerIndex + 1);
 

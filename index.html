@@ -48,7 +48,10 @@
         </p>
 
         <div style="margin-left: auto; display: flex; gap: 30px; align-items: flex-end">
-            <select class="selectpicker" data-show-subtext="true">
+            <select class="selectpicker" id="subjectPicker" data-show-subtext="true">
+            </select>
+
+            <select class="selectpicker" id="catPicker" data-show-subtext="true">
             </select>
 
             <p class="info-wrap">
@@ -78,11 +81,8 @@
             <input type="radio" name="mode" tabindex="-1" id="RECITE_NEW">
             <label role="button" for="RECITE_NEW">Recite New</label>
 
-            <input type="radio" name="mode" tabindex="-1" id="RECITE_ALL">
-            <label role="button" for="RECITE_ALL">Recite All</label>
-
-            <input type="radio" name="mode" tabindex="-1" id="RECITE_THOUGHT">
-            <label role="button" for="RECITE_THOUGHT">Recite Thought</label>
+            <input type="radio" name="mode" tabindex="-1" id="RECITE">
+            <label role="button" for="RECITE">Recite</label>
         </div>
     </footer>
 

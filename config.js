@@ -1,14 +1,14 @@
+import storage from "./libs/storage.js";
+
 const config = {
     random: true,
     newMode: false,
-    subject: "network",
+    subject: storage.get("subject", "network"),
 
-    mode: "ADD_NEW",
+    cat: "new",
+    mode: storage.get("mode", "ADD_NEW")
 }
 
-config.mode = localStorage.getItem("mode") || "ADD_NEW";
-
-const subject = localStorage.getItem("subject");
-if( subject ) config.subject = subject;
+config.cat = storage.get(config.subject + "_cat", "new");
 
 export { config };

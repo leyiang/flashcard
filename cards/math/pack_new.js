@@ -12,12 +12,12 @@ export default {
         ["\\int \\csc(x)dx=?", "\\int \\csc xdx=-\\ln \\left|\\csc x+\\cot x\\right|+C"],
         ["\\int \\sec(x)dx=?", "\\int \\sec xdx=\\ln \\left|\\sec x+\\tan x\\right|+C"],
         ["\\int \\frac{dx}{\\sqrt{x^2-a^2}}=?", "\\int \\frac{dx}{\\sqrt{x^2-a^2}}=\\ln \\left|x+\\sqrt{x^2-a^2}\\right|+C"],
-        ["\\int \\frac{dx}{\\sqrt{x^2+a^2}}=?", "\\int \\frac{dx}{\\sqrt{x^2+a^2}}=\\ln \\left(x+\\sqrt{x^2+a^2}\\right)+C"],
+        ["\\int \\frac{dx}{\\sqrt{x^2+a^2}}=?", "\\int \\frac{dx}{\\sqrt{x^2+a^2}}=\\ln \\left|x+\\sqrt{x^2+a^2}\\right|+C"],
         ["\\int \\frac{1}{x^2-a^2}dx=?", "\\int \\frac{1}{x^2-a^2}dx=\\frac{1}{2a}\\ln \\left|\\frac{x-a}{x+a}\\right|+C"],
         ["\\int \\frac{1}{\\sqrt{a^2-x^2}}dx=?", "\\int \\frac{1}{\\sqrt{a^2-x^2}}dx=\\arcsin \\left(\\frac{x}{a}\\right)+C"],
 
         ["f(x)在什么条件下，一定存在原函数?", "若f(x)在I上连续，则区间I上一定存在原函数",
-            "f(x)在什么条件下，一定没有函数?", "若f(x)在区间I上有第一类间断点 \\\\ 则f(x)在I上没有原函数"
+            "f(x)在什么条件下，一定没有原函数?", "若f(x)在区间I上有第一类间断点 \\\\ 则f(x)在I上没有原函数"
         ],
 
         ["若f(x)可导，那其反函数的导数是什么?", "若y=f(x)可导,且f'(x)\\ne0 \\\\ 其反函数x=\\phi(y)也可导 \\\\ \\phi'(y)=\\frac{1}{f'(x)} \\\\ f'(x)是切线关于x轴夹角\\alpha的\\tan \\alpha值 \\\\ \\phi'(y)是关于y轴夹角\\beta的\\tan \\beta值 \\\\ \\beta = \\frac{\\pi}{2}-\\alpha, 所以两者\\tan互为倒数", "image:math_inverse_derivative_explain.png"],

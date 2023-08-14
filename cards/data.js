@@ -3,35 +3,17 @@ import { import_map } from "./import_map.js";
 
 let card_packs = import_map[ config.subject ];
 
-// config.mode = "RECITE_THOUGHT";
+config.random = false;
 
 if( config.mode === "ADD_NEW" ) {
-    config.random = false;
-    config.new = true;
+    config.cat = "new";
+    config.random = true;
 } else if( config.mode === "RECITE_NEW" ) {
-    config.random = true;
-    config.new = true;
-} else if( config.mode === "RECITE_ALL" ) {
-    config.random = true;
-    config.new = false;
-} else if( config.mode === "RECITE_THOUGHT" ) {
-    config.random = true;
-    config.new = false;
+    config.cat = "new";
 }
 
-if( config.new ) {
-    card_packs = card_packs.filter(pack => pack.name === "new" );
-} else if ( config.mode === "RECITE_THOUGHT" ) {
+card_packs = card_packs.filter(pack => pack.name === config.cat);
 
-    console.log( card_packs );
-    card_packs = card_packs.filter(pack => pack.name !== "new" );
-    card_packs = card_packs.filter(pack => pack.name === "thought");
-} else {
-    card_packs = card_packs.filter(pack => pack.name !== "new" );
-    card_packs = card_packs.filter(pack => pack.name !== "thought" );
-}
-
-// config.random = false;
 
 const cards = {
     subject: config.subject,
@@ -53,12 +35,23 @@ const subjects = Object.keys( import_map );
 
 subjects.forEach(subject => {
     const current = subject === config.subject;
-    $(".selectpicker").append(`<option ${current ? 'selected' : '' }>${ subject }</option>`);
+    $("#subjectPicker").append(`<option ${current ? 'selected' : '' }>${ subject }</option>`);
 });
 
-$(".selectpicker").on("change", function(e){
+const catList = import_map[config.subject].map(item => item.name);
+catList.forEach( cat => {
+    const current = cat === config.cat;
+    $("#catPicker").append(`<option ${current ? 'selected' : '' }>${ cat }</option>`);
+});
+
+$("#subjectPicker").on("change", function(e){
     // this.value
     localStorage.setItem("subject", this.value);
+    location.reload();
+});
+
+$("#catPicker").on("change", function(e){
+    localStorage.setItem(config.subject + "_cat", this.value);
     location.reload();
 });
 
