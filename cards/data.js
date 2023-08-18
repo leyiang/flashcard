@@ -3,13 +3,20 @@ import { import_map } from "./import_map.js";
 
 let card_packs = import_map[ config.subject ];
 
-config.random = false;
+// Subject does not exists
+if( ! card_packs ) {
+    card_packs = import_map[ Object.keys(import_map)[0] ];
+}
+
+config.random = true;
 
 if( config.mode === "ADD_NEW" ) {
     config.cat = "new";
-    config.random = true;
+    config.random = false;
 } else if( config.mode === "RECITE_NEW" ) {
     config.cat = "new";
+} else if( config.mode === "DEV" ) {
+    config.random = false;
 }
 
 card_packs = card_packs.filter(pack => pack.name === config.cat);
@@ -38,7 +45,9 @@ subjects.forEach(subject => {
     $("#subjectPicker").append(`<option ${current ? 'selected' : '' }>${ subject }</option>`);
 });
 
-const catList = import_map[config.subject].map(item => item.name);
+const subjectContent = import_map[config.subject] || [];
+const catList = subjectContent.map(item => item.name);
+
 catList.forEach( cat => {
     const current = cat === config.cat;
     $("#catPicker").append(`<option ${current ? 'selected' : '' }>${ cat }</option>`);

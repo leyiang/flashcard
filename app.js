@@ -66,6 +66,10 @@ command.on("new", () => {
     setMode("RECITE_NEW")
 });
 
+command.on("dev", () => {
+    setMode("DEV")
+});
+
 command.on("add", () => {
     setMode("ADD_NEW")
 });
