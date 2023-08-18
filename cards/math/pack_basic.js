@@ -1,6 +1,19 @@
 export default {
     name: "basic",
     cards: [
+        ["x\\in(0,\\frac{\\pi}{2})时 \\\\ 请给出\\sin x, \\tan x, x的不等式关系", "x\\in(0,\\frac{\\pi}{2})时 \\\\ \\sin x < x < \\tan x"],
+        ["||a|-|b|| 和 |a-b|的不等式关系",
+            "||a|-|b|| <= |a-b|",
+            "取整函数[x](向下)的基本不等式",
+            "[x]定义是不大于x的最大整数 \\\\ 所以[x]\\le x (=是x为整数的情况) \\\\ [x]在舍去小数时，最大不会超过1 \\\\ 所以x-1<[x]\\le x",
+            "涉及a,b的不等式关系",
+            "2ab\\le a^2+b^2",
+            "涉及a,b,c的不等式关系",
+            "\\sqrt[3]{abc}\\le \\frac{a+b+c}{3}"
+        ],
+        ["f(x)+f(-x)是个什么函数? \\\\ f(x)-f(-x)是什么函数?", "f(x)+f(-x)大概率是偶函数 \\\\ f(x)-f(-x)大概率是奇函数 \\\\ 要自己验证一下"],
+        ["函数凹凸性的不等式定义", "凹：f\\left(\\frac{x_1+x_2}{2}\\right)<\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2} \\\\ 凸：f\\left(\\frac{x_1+x_2}{2}\\right)>\\frac{f\\left(x_1\\right)+f\\left(x_2\\right)}{2}", "image:math_concave_defination.png"],
+        ["两条垂直线斜率的关系", "两条垂直线斜率互为负倒数"],
         [   "圆体积公式","V=\\frac{4}{3}\\pi r^3",
             "圆柱体积公式","V=\\pi r^2h",
             "圆锥体积公式","V=\\frac{1}{3}\\pi r^2h",

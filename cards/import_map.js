@@ -11,7 +11,9 @@ import math_pack_basic from "./math/pack_basic.js"
 import math_pack_calc from "./math/pack_calc.js"
 import math_pack_complex from "./math/pack_complex.js"
 import math_pack_concept from "./math/pack_concept.js"
+import math_pack_derivative from "./math/pack_derivative.js"
 import math_pack_integral from "./math/pack_integral.js"
+import math_pack_limit from "./math/pack_limit.js"
 import math_pack_log from "./math/pack_log.js"
 import math_pack_new from "./math/pack_new.js"
 import math_pack_series from "./math/pack_series.js"
@@ -35,7 +37,9 @@ const import_map = {
         math_pack_calc,
         math_pack_complex,
         math_pack_concept,
+        math_pack_derivative,
         math_pack_integral,
+        math_pack_limit,
         math_pack_log,
         math_pack_new,
         math_pack_series,

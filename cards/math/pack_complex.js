@@ -1,5 +1,5 @@
 export default {
-    name: "concept",
+    name: "complex",
     cards: [
         ["z\\overline{z}=?","z\\overline{z}=|z|^2"],
         ["z = x+yi \\\\ |z| = ?","z的模=\\sqrt{x^2+y^2}"],

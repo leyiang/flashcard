@@ -1,6 +1,8 @@
 export default {
     name: "series",
     cards: [
+        ["\\left(1+x\\right)^a的泰勒展开","\\left(1+x\\right)^a=1+ax+\\frac{a\\left(a-1\\right)}{2!}x^2+.. \\\\ ..+\\frac{a\\left(a-1\\right)...\\left(a-n+1\\right)}{n!}x^n+o\\left(x^n\\right)"],
+        ["皮亚诺余项", "R_n(x)=o(x-a)^n, (x\\to a)"],
         ["若想证明一个函数在某些数x处 \\\\ 等于它的泰勒级数，可尝试证明 \\\\ N\\to\\infty时R_N(x)\\to 0","f(x)=P_N(x)+R_N(x) \\\\ f(x)=\\lim_{N\\to\\infty}\\sum_{n=0}^N\\frac{f^{(n)}(a)}{n!}(x-a)^n \\\\ f(x)=\\sum_{n=0}^\\infty\\frac{f^{(n)}(a)}{n!}(x-a)^n "],
         ["若对连续递减函数f有a_n=f(n),则","\\sum_{n=N}^\\infty a_n与\\int_N^\\infty f(x)dx同时收敛或发散"],
         ["若\\lim_{x\\to\\infty}|a_n|^{\\frac{1}{n}} = L \\\\ 则级数\\sum_{n=1}^{\\infty}a_n的收敛情况为?","若L<1,级数绝对收敛 \\\\ 若L>1, 级数发散 \\\\ 若L=1或极限不存在，根式判别法失效"],
@@ -43,12 +45,6 @@ export default {
         ["\\int_{a}^{\\infty} f(x)dx = ?","\\lim_{N \\to \\infty} \\int_{a}^N f(x)dx"],
         ["若仅仅在x接近b时 f(x)无界 \\\\ \\int_{a}^{b} f(x)dx = ? ","\\lim_{\\epsilon \\to 0^+}\\int_{a}^{b-\\epsilon}f(x)dx"],
         ["若仅仅在x接近a时 f(x)无界 \\\\ \\int_{a}^{b} f(x)dx = ? ","\\lim_{\\epsilon \\to 0^+}\\int_{a+\\epsilon}^{b}f(x)dx"],
-        ["\\int_{a}^{b}(f(x)+g(x))dx=?", "\\int_{a}^{b}f(x)dx + \\int_{a}^{b}g(x)dx"],
-        ["\\int_{a}^{b}Cf(x)dx=?", "C\\int_{a}^{b}f(x)dx=?"],
-        ["\\int_{a}^{c}f(x)dx + \\int_{c}^{b}f(x)dx = ?", "\\int_{a}^{b}f(x)dx"],
-        ["\\int_{a}^{a}f(x)dx=?", "0"],
-        ["\\int_{a}^{b}f(x)dx=(\\text{what})\\int_{b}^{a}f(x)dx", "\\int_{a}^{b}f(x)dx=(-1)\\int_{b}^{a}f(x)dx"],
-        ["\\int_{-a}^{a}f(x)dx=?", "如果f(x)是奇函数的话，积分值等于0 \\\\ 如果f(x)是偶函数，积分等于2\\int_0^{a}f(x)dx"],
         ["\\sum_{i=1}^{n}i^2=?", "\\frac{n(n+1)(2n+1)}{6}"],
         ["\\sum_{i=1}^{n}i=?", "\\frac{n(n+1)}{2}"],
         ["\\sum_{i=1}^{n}(x_{i} + y_{i})", "\\sum_{i=1}^{n}x_{i} + \\sum_{i=1}^{n}y_{i}"],

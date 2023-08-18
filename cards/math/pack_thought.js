@@ -1,6 +1,10 @@
 export default {
     name: "thought",
     cards: [
+        ["\\int \\frac{\\left(\\ln x+2\\right)^2}{x}dx=?", "\\ln x 用 \\frac{1}{x}换元 \\\\ ans=\\frac{1}{3}\\left[\\ln x+2\\right]^3+C"],
+        ["\\int \\frac{2-x}{\\sqrt{3+2x-x^2}}dx=?", "根号里的导数是2-2x, 分子分项，再配方一下 \\\\ 原式=\\int \\frac{1-x}{\\sqrt{3+2x-x^2}}dx+\\int \\frac{1}{\\sqrt{3+2x-x^2}}dx \\\\ =\\frac{1}{2}\\int \\frac{2-2x}{\\sqrt{3+2x-x^2}}dx+\\int \\frac{1}{\\sqrt{4-\\left(x-1\\right)^2}}dx \\\\ 左边直接换元, 右边配方 \\\\ 我们知道：\\int \\frac{1}{\\sqrt{a^2-x^2}}dx=\\arcsin \\left(\\frac{x}{a}\\right)+C \\\\ ans=\\sqrt{3+2x-x^2}+\\arcsin \\left(\\frac{x-1}{2}\\right)+C"],
+        ["\\int \\sqrt{1+e^x}dx=?", "令t=\\sqrt{1+e^x},则x=\\ln \\left(t^2-1\\right) \\\\ dx=\\frac{2t}{t^2-1}dt, 原式=\\int \\frac{2t^2}{t^2-1}dt \\\\ 加一减一,拆项求积分,得2t+\\ln \\left|\\frac{t-1}{t+2}\\right|+C \\\\ 再把t=\\sqrt{1+e^x}代入即可 \\\\ ans=2\\sqrt{1+e^x}+\\ln \\left|\\frac{\\sqrt{1+e^x}-1}{\\sqrt{1+e^x}+2}\\right|+C"],
+        ["\\int \\frac{\\ln x}{\\left(1-x\\right)^2}dx=?", "\\int \\frac{\\ln x}{\\left(1-x\\right)^2}dx=\\frac{\\ln x}{1-x}-\\int \\frac{dx}{x\\left(1-x\\right)} \\\\ 右边的积分+x-x分项 =\\int \\frac{1-x+x}{x\\left(1-x\\right)}dx \\\\ =\\int xdx+\\int \\frac{1}{1-x}dx \\\\ ans=\\frac{\\ln x}{1-x}+\\ln \\frac{\\left|1-x\\right|}{x}+C "],
         ["\\lim_{n\\to\\infty}\\frac{2^n}{n!}", "0<\\frac{2^n}{n!}=\\frac{2*2*2*...*2}{1*2*3*...*n}\\le\\frac{4}{n} \\\\ n\\to\\infty, 两边都为0 \\\\ 解法2: a_n = \\frac{2^n}{n!}, a_{n+1} = \\frac{2}{n+1}a_n \\\\ 单调有界函数\\to有极限,假设\\lim_{n\\to\\infty}a_n = A \\\\ 两边取极限 A=0*A, A=0"],
         ["x\\to 0时,\\frac{1}{x^2}\\sin\\frac{1}{x}是无穷大吗", "令a=\\frac{1}{2n\\pi+\\frac{\\pi}{2}}, 使得代入后\\sin\\frac{1}{x}=1 \\\\ 令b=\\frac{1}{2n\\pi}, 使得代入后\\sin\\frac{1}{x}=0 \\\\  则对于任意的M>0,都有\\delta>0 \\\\ 0<a<\\delta 和 0<b<\\delta \\\\ 代入a = (2n\\pi+\\frac{\\pi}{2})^2>M, 代入b得0 \\\\ 所以是无界的，但不是无穷大"],
         ["\\lim_{x\\to\\infty}(\\frac{x^2}{(x-a)(x+b)})^x的思路?", "原式变为\\lim_{x\\to\\infty}(\\frac{x}{x-a})^x(\\frac{x}{x+b})^x \\\\ \\lim_{x\\to\\infty}\\frac{1}{(1-\\frac{a}{x})^x}\\frac{1}{(1+\\frac{b}{x})^x} = e^{a-b} "],

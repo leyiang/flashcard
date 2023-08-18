@@ -2,6 +2,8 @@ export default {
     name: "new",
     cards: [
         //["", "",],
+        ["停止等待协议的信道利用率", "image:network_2023-08-17-04-53-47.png"],
+        ["停止等待协议(SW)", "image:network_2023-08-17-04-47-47.png", "image:network_2023-08-17-04-49-40.png",],
         ["数据链路层在什么情况下提供可靠传输?", "802.11无线网要求数据链路层提供可靠传输服务 \n 以太网不需要可靠传输服务",],
 
         ["FCS是什么?", "FCS(Frame Check Sequence) \n 检错码",],
