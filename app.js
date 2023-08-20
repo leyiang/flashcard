@@ -55,6 +55,8 @@ const command = new Command(
 
 function setSubject(subject) {
     localStorage.setItem("subject", subject);
+    localStorage.removeItem("dev_id");
+    localStorage.removeItem("dev_answer_index");
     location.reload();
 }
 

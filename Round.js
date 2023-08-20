@@ -1,6 +1,7 @@
 import { cards } from "./cards/data.js";
 import Timer from "./Timer.js";
 import { config } from "./config.js";
+import storage from "./libs/storage.js";
 
 const timerEL = document.getElementById("roundTimer");
 
@@ -38,6 +39,24 @@ export default class Round {
         this.timer = new Timer(() => {
             timerEL.textContent = Timer.Format( this.timer.seconds );
         });
+        this.load();
+    }
+
+    // Load config
+    load() {
+        if( config.mode == "DEV" ) {
+            let pointer = storage.get("dev_id", 0);
+            if( pointer < 0 ) pointer = 0;
+            if( pointer >= cards.data.length ) pointer = 0;
+
+            let answerIndex = parseInt(storage.get("dev_answer_index", 0));
+            this.pointer = parseInt(pointer);
+
+            if( answerIndex !== 0 ) {
+                this.answer = true;
+                this.answerIndex = answerIndex - 1;
+            }
+        }
     }
 
     start() {
@@ -50,12 +69,19 @@ export default class Round {
         this.info.totalNumberEL.textContent = cards.data.length.toString();
 
         this.timer.start();
-        this.update();
+        this.update(false);
     }
 
-    update() {
+    update(manual=true) {
         const card = cards.data[ this.pointer ];
         if( ! card ) return;
+
+        if( config.mode === "DEV" && manual ) {
+            console.log( config.mode, manual, this.pointer, this.answerIndex );
+            storage.set("dev_id", this.pointer);
+            storage.set("dev_answer_index", this.answer ? this.answerIndex + 1 : 0);
+        }
+
         const content = this.answer ? card[1 + this.answerIndex ] : card[0];
 
         this.answer

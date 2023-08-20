@@ -56,11 +56,15 @@ catList.forEach( cat => {
 $("#subjectPicker").on("change", function(e){
     // this.value
     localStorage.setItem("subject", this.value);
+    localStorage.removeItem("dev_id");
+    localStorage.removeItem("dev_answer_index");
     location.reload();
 });
 
 $("#catPicker").on("change", function(e){
     localStorage.setItem(config.subject + "_cat", this.value);
+    localStorage.removeItem("dev_id");
+    localStorage.removeItem("dev_answer_index");
     location.reload();
 });
 
