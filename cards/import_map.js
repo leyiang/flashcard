@@ -14,13 +14,14 @@ import math_pack_concept from "./math/pack_concept.js"
 import math_pack_derivative from "./math/pack_derivative.js"
 import math_pack_integral from "./math/pack_integral.js"
 import math_pack_limit from "./math/pack_limit.js"
-import math_pack_log from "./math/pack_log.js"
 import math_pack_new from "./math/pack_new.js"
 import math_pack_series from "./math/pack_series.js"
 import math_pack_thought from "./math/pack_thought.js"
 import math_pack_trig from "./math/pack_trig.js"
 import network_pack_basic from "./network/pack_basic.js"
 import network_pack_new from "./network/pack_new.js"
+import network_pack_thought from "./network/pack_thought.js"
+import phl_pack_cultural from "./phl/pack_cultural.js"
 import phl_pack_new from "./phl/pack_new.js"
 
 const import_map = {
@@ -40,7 +41,6 @@ const import_map = {
         math_pack_derivative,
         math_pack_integral,
         math_pack_limit,
-        math_pack_log,
         math_pack_new,
         math_pack_series,
         math_pack_thought,
@@ -48,9 +48,11 @@ const import_map = {
     ],
     network: [
         network_pack_basic,
-        network_pack_new
+        network_pack_new,
+        network_pack_thought
     ],
     phl: [
+        phl_pack_cultural,
         phl_pack_new
     ]
 }

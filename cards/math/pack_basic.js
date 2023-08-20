@@ -1,6 +1,18 @@
 export default {
     name: "basic",
     cards: [
+        ["b^xb^y=?", "b^{(x+y)}"],
+        ["\\frac{b^x}{b^y}=?", "b^{(x-y)}"],
+        ["(b^x)^y=?", "b^{xy}"],
+        ["b^{\\log_{b} (y)}=?", "y"],
+        ["\\log_{b} (b^x)=?", "x"],
+        ["\\log_{b} (1)=?", "0"],
+        ["\\log_{b} (b)=?", "1"],
+        ["\\log_{b} (xy)=?", "\\log_{b} (x) + \\log_{b} (y)"],
+        ["\\log_{b} (\\frac{x}{y})=?", "\\log_{b} (x) - \\log_{b} (y)"],
+        ["\\log_{b} (x^y)=?", "y\\log_{b} (x)"],
+        ["换成以c为底：\\log_{b} (x)", "\\frac{\\log_{c} (x)}{\\log_{c} (b)}"],
+        ["\\mathring{U}(x_0,\\delta)是什么?", "以x_0为中心,\\delta为半径的一个去心邻域"],
         ["x\\in(0,\\frac{\\pi}{2})时 \\\\ 请给出\\sin x, \\tan x, x的不等式关系", "x\\in(0,\\frac{\\pi}{2})时 \\\\ \\sin x < x < \\tan x"],
         ["||a|-|b|| 和 |a-b|的不等式关系",
             "||a|-|b|| <= |a-b|",

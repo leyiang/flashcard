@@ -1,7 +1,6 @@
 export default {
     name: "concept",
     cards: [
-        ["积分中值定理", "image:math_integral_mean_value_theorem.png", "image:math_2023-08-18-05-23-00.png"],
         ["柯西中值定理", "y=f(t), x=F(t) \\\\ f(x),F(x)在[a,b]上连续 \\\\ f(x)和F(x)在(a,b)可导 \\\\ 且F(x)\\ne0,则\\exists c\\in (a,b) \\\\ \\frac{f(b)-f(a)}{F(b)-F(a)}=\\frac{f'(c)}{F'(c)}"],
         ["介值定理","若f(x)在[a,b]上连续，且f(a)\\ne f(b) \\\\ 则对f(a)与f(b)之间任意值N \\\\ 在[a,b]之间至少有一点c, 使得f(c)=N"],
         ["最值定理","若f(x)在[a,b]上连续 \\\\ 则f(x)在[a,b]上必有最大值和最小值"],
