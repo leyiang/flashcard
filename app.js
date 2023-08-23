@@ -1,4 +1,6 @@
 import Round from "./Round.js";
+import storage from "./libs/storage.js";
+import { config } from "./config.js";
 
 const cardEL = document.getElementById("card");
 
@@ -17,6 +19,14 @@ function event() {
     });
 
     document.addEventListener("keydown", e => {
+        if( e.key === "Home" ) {
+            if( config.mode == "DEV" ) {
+                storage.remove("dev_id");
+                storage.remove("dev_answer_index");
+                location.reload();
+            }
+        }
+
         if( e.key === " " ) {
             round.go();
         }
