@@ -21,7 +21,6 @@ export default {
         ["\\int \\frac{1}{\\sqrt{a^2-x^2}}dx=?", "\\int \\frac{1}{\\sqrt{a^2-x^2}}dx=\\arcsin \\left(\\frac{x}{a}\\right)+C"],
         ["如何用定积分的定义求极限","1.提出\\frac{1}{n},把变化的地方写成x \\\\ 2.看变化的地方的极限，写出上下限 \\\\ 3.确认\\frac{1}{n}是否准确，是否要补项"],
         ["定积分的定义","\\lim _{n\\to \\infty }\\frac{1}{n}\\sum _{i=1}^nf\\left(\\frac{i}{n}\\right)=\\int _0^1f\\left(x\\right)dx \\\\ 基中n是将图形切分的份数,n越大,越精确"],
-        ["\\frac{d}{dx} \\ln|x|","\\frac{1}{x}"],
         ["曲线绕y轴旋转的体积:","\\int_{a}^b 2\\pi xydx"],
         ["曲线绕x轴旋转的体积:","\\int_{a}^b \\pi y^2dx"],
         ["\\sqrt{x^2-a^2}, 三角替换", "x=a\\sec(\\theta) \\\\ x^2-a^a=a^2\\tan^2(\\theta) \\\\ 考虑绝对值, x<0时, 对边为负 "],

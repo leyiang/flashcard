@@ -1,6 +1,16 @@
 export default {
     name: "thought",
     cards: [
+        ["image:math_2023-08-19-20-58-27.png", "image:math_2023-08-19-20-59-14.png"],
+        ["image:math_2023-08-19-19-38-29.png","image:math_2023-08-18-17-16-29.png", "积分大小看里面的函数 \\\\ \\ln是增函数，只需要看里面的函数", "image:math_2023-08-19-19-40-46.png" ],
+        ["image:math_2023-08-19-19-17-47.png", "重点是把S_3看作梯形", "image:math_2023-08-19-19-18-50.png"],
+        ["image:math_2023-08-19-18-56-00.png", "F(2), F(-2), F(3), F(-3)分别是多少?", "image:math_2023-08-19-18-57-30.png"],
+        ["image:math_2023-08-20-08-43-17.png", "image:math_2023-08-20-08-44-22.png"],
+        ["image:math_2023-08-20-10-37-42.png", "image:math_2023-08-20-10-38-14.png"],
+        ["image:math_2023-08-20-10-30-38.png", "image:math_2023-08-20-10-30-52.png"],
+        ["image:math_2023-08-20-10-29-32.png", "image:math_2023-08-20-10-29-54.png"],
+        ["image:math_2023-08-20-12-46-28.png", "image:math_2023-08-20-12-46-47.png"],
+        ["image:math_2023-08-20-12-20-29.png", "image:math_2023-08-20-12-21-11.png"],
         ["\\int \\frac{\\left(\\ln x+2\\right)^2}{x}dx=?", "\\ln x 用 \\frac{1}{x}换元 \\\\ ans=\\frac{1}{3}\\left[\\ln x+2\\right]^3+C"],
         ["\\int \\frac{2-x}{\\sqrt{3+2x-x^2}}dx=?", "根号里的导数是2-2x, 分子分项，再配方一下 \\\\ 原式=\\int \\frac{1-x}{\\sqrt{3+2x-x^2}}dx+\\int \\frac{1}{\\sqrt{3+2x-x^2}}dx \\\\ =\\frac{1}{2}\\int \\frac{2-2x}{\\sqrt{3+2x-x^2}}dx+\\int \\frac{1}{\\sqrt{4-\\left(x-1\\right)^2}}dx \\\\ 左边直接换元, 右边配方 \\\\ 我们知道：\\int \\frac{1}{\\sqrt{a^2-x^2}}dx=\\arcsin \\left(\\frac{x}{a}\\right)+C \\\\ ans=\\sqrt{3+2x-x^2}+\\arcsin \\left(\\frac{x-1}{2}\\right)+C"],
         ["\\int \\sqrt{1+e^x}dx=?", "令t=\\sqrt{1+e^x},则x=\\ln \\left(t^2-1\\right) \\\\ dx=\\frac{2t}{t^2-1}dt, 原式=\\int \\frac{2t^2}{t^2-1}dt \\\\ 加一减一,拆项求积分,得2t+\\ln \\left|\\frac{t-1}{t+2}\\right|+C \\\\ 再把t=\\sqrt{1+e^x}代入即可 \\\\ ans=2\\sqrt{1+e^x}+\\ln \\left|\\frac{\\sqrt{1+e^x}-1}{\\sqrt{1+e^x}+2}\\right|+C"],

@@ -1,6 +1,7 @@
 export default {
     name: "derivative",
     cards: [
+        ["\\frac{d}{dx} \\ln|x|","\\frac{1}{x}"],
         ["\\frac{d}{dx} \\ln{(x)}", "\\frac{1}{x}"],
         ["\\frac{d}{dx} \\log_{b}{(x)}", "\\frac{1}{x\\ln{(b)}}"],
         ["\\frac{d}{dx} (b^x)", "b^x\\ln{(b)}"],
