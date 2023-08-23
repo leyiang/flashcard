@@ -29,11 +29,19 @@
             height: 100%;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         @font-face {
             font-family: "Symbola";
             src: url("./Symbola.woff");
+        }
+
+        .convert-format {
+            display: block;
+            margin-top: 2rem;
+            width: 500px;
+            height: 80px;
         }
     </style>
 </head>
@@ -58,6 +66,20 @@
             });
         </script>
     </div>
+
+    <textarea class="convert-format"></textarea>
+
+    <script>
+        const textHolder = document.querySelector(".convert-format");
+        textHolder.addEventListener("input", e => {
+            const converted = textHolder.value.replaceAll("\\", '\\\\');
+            textHolder.value = converted;
+            textHolder.select();
+            document.execCommand("copy");
+
+        });
+    </script>
+
 
 </main>
 </body>
