@@ -44,7 +44,7 @@ export default class Round {
 
     // Load config
     load() {
-        if( config.mode == "DEV" ) {
+        if( config.mode == "DEV" || config.mode == "TRAIN" ) {
             let pointer = storage.get("dev_id", 0);
             if( pointer < 0 ) pointer = 0;
             if( pointer >= cards.data.length ) pointer = 0;
@@ -76,7 +76,9 @@ export default class Round {
         const card = cards.data[ this.pointer ];
         if( ! card ) return;
 
-        if( config.mode === "DEV" && manual ) {
+        if( (config.mode === "DEV" || config.mode === "TRAIN" )
+            && manual
+        ) {
             console.log( config.mode, manual, this.pointer, this.answerIndex );
             storage.set("dev_id", this.pointer);
             storage.set("dev_answer_index", this.answer ? this.answerIndex + 1 : 0);
@@ -113,8 +115,15 @@ export default class Round {
         if( content.startsWith("image:") ) {
             // Render Image
             this.info.cardEL.classList.add("render-image");
-            const url = content.slice(6);
-            this.renderImage( url );
+            let link = null;
+            let url = content.slice(6);
+            if( url.includes(",") ) {
+                let tmp = url.split(',');
+                url = tmp[0];
+                link = tmp[1];
+            }
+
+            this.renderImage( url, link );
         } else if ( content.startsWith("text:") ) {
             this.info.cardEL.classList.add("render-text");
             this.renderText( content.slice(5) );
@@ -124,11 +133,21 @@ export default class Round {
         }
     }
 
-    renderImage( fname ) {
+    renderImage( fname, link=null ) {
         const image = document.createElement("img");
         image.src = "./images/" + fname;
 
         this.info.cardEL.appendChild( image );
+
+        if( link ) {
+            const a = document.createElement("a");
+            a.innerText = "more";
+            a.href = link;
+            a.classList = "external-link";
+            a.target = "_blank";
+
+            this.info.cardEL.appendChild( a );
+        }
     }
 
 

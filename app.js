@@ -15,12 +15,16 @@ const round = new Round({
 
 function event() {
     cardEL.addEventListener("click", e => {
-        round.go();
+        if( e.target.tagName === "A" ) {
+            // Current Nothing To Do, Just Empty
+        } else {
+            round.go();
+        }
     });
 
     document.addEventListener("keydown", e => {
         if( e.key === "Home" ) {
-            if( config.mode == "DEV" ) {
+            if( config.mode == "DEV" || config.mode == "TRAIN" ) {
                 storage.remove("dev_id");
                 storage.remove("dev_answer_index");
                 location.reload();
