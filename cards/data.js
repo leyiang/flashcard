@@ -9,6 +9,7 @@ if( ! card_packs ) {
 }
 
 config.random = true;
+config.reverse = false;
 
 if( config.mode === "ADD_NEW" ) {
     config.cat = "new";
@@ -17,10 +18,12 @@ if( config.mode === "ADD_NEW" ) {
     config.cat = "new";
 } else if( config.mode === "DEV" ) {
     config.random = false;
+} else if (config.mode === "TRAIN" ) {
+    config.random = false;
+    config.reverse = true;
 }
 
 card_packs = card_packs.filter(pack => pack.name === config.cat);
-
 
 const cards = {
     subject: config.subject,
@@ -36,6 +39,10 @@ card_packs.forEach(card_pack => {
 if( config.random ) {
     cards.data = shuffle( shuffle(cards.data) );
     shuffleArray( cards.data );
+}
+
+if( config.reverse ) {
+    cards.data.reverse();
 }
 
 const subjects = Object.keys( import_map );

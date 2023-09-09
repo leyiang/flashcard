@@ -37,7 +37,7 @@ export default {
         ["image:math_2023-08-21-16-30-52.png", "image:math_2023-08-21-16-31-21.png"],
         ["无界反常积分的p判别法", "image:math_2023-08-21-15-45-32.png"],
         ["反常积分的比较判别法", "image:math_2023-08-21-12-35-23.png", "image:math_2023-08-21-12-36-32.png"],
-        ["image:math_2023-08-21-12-17-33.png", "image:math_2023-08-21-12-18-04.png"],
+        ["image:math_2023-08-21-12-17-33.png", "image:math_2023-08-21-12-18-04.png,https://youtu.be/bIDwiTNtvCE?list=PLH_SiDrNHIUSk73XDuUzuzzSKxPsSOpnP&t=7235"],
         ["积分中值定理", "image:math_2023-08-18-05-23-00.png"],
         ["\\int_b^cf(x)=0, c是固定常数 \\\\ 如何确定b的值", "积分值等于0有两种情况: \\\\ 1.上下限相等 \\\\ 2.面积有正有负相互抵消", "若f(x)恒大于0,且积分等于0,则b=c"],
         ["\\int_0^\\pi\\sin^2xdx=?", "2\\int_0^\\frac{\\pi}{2}\\sin^2xdx=?", "image:math_2023-08-19-21-43-25.png"],
